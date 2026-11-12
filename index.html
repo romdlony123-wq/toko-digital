@@ -1,0 +1,4692 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Katalog Produk Digital & Template Website Profesional dengan Fitur Live Demo Interaktif." />
+  <meta property="og:title" content="DigiStore Studio — Katalog Produk Digital & Live Demo" />
+  <meta property="og:description" content="Jelajahi dan uji langsung template website serta aplikasi digital melalui fitur Live Demo interaktif." />
+  <meta property="og:type" content="website" />
+  <title>DigiStore Studio — Toko Produk Digital & Live Demo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================
+       RESET & VARIABEL TEMA
+       ========================================== */
+    :root {
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-soft: #eef2ff;
+      --emerald: #10b981;
+      --emerald-hover: #059669;
+      --emerald-soft: #ecfdf5;
+      --amber: #f59e0b;
+      --amber-soft: #fffbeb;
+      --danger: #ef4444;
+      --danger-hover: #dc2626;
+      --danger-soft: #fef2f2;
+      --slate-950: #020617;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 22px;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 6px 18px -4px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 18px 36px -10px rgba(15, 23, 42, 0.14);
+      --transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--slate-50);
+      color: var(--slate-800);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* Kompatibilitas Full Page Blogger */
+    body.blogger-mode .header-outer,
+    body.blogger-mode .footer-outer,
+    body.blogger-mode .sidebar-container {
+      display: none !important;
+    }
+
+    button, input, textarea, select {
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ==========================================
+       KOMPONEN TOMBOL & BADGE
+       ========================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.28);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-emerald {
+      background: var(--emerald);
+      color: var(--white);
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.28);
+    }
+
+    .btn-emerald:hover:not(:disabled) {
+      background: var(--emerald-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--slate-700);
+      border: 1px solid var(--slate-300);
+    }
+
+    .btn-outline:hover:not(:disabled) {
+      background: var(--slate-100);
+      border-color: var(--slate-400);
+    }
+
+    .btn-ghost {
+      color: var(--slate-600);
+      background: transparent;
+    }
+
+    .btn-ghost:hover:not(:disabled) {
+      background: var(--slate-100);
+      color: var(--slate-900);
+    }
+
+    .btn-danger {
+      background: var(--danger);
+      color: var(--white);
+    }
+
+    .btn-danger:hover:not(:disabled) {
+      background: var(--danger-hover);
+    }
+
+    .btn-sm {
+      padding: 7px 12px;
+      font-size: 0.82rem;
+    }
+
+    .btn-lg {
+      padding: 13px 24px;
+      font-size: 1rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-primary {
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
+    .badge-emerald {
+      background: var(--emerald-soft);
+      color: var(--emerald-hover);
+    }
+
+    .badge-amber {
+      background: var(--amber-soft);
+      color: #b45309;
+    }
+
+    .badge-danger {
+      background: var(--danger-soft);
+      color: var(--danger-hover);
+    }
+
+    .badge-slate {
+      background: var(--slate-200);
+      color: var(--slate-700);
+    }
+
+    /* ==========================================
+       WAJAH 1: PUBLIC STOREFRONT
+       ========================================== */
+    .pub-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .pub-navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--slate-900);
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), #6366f1);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+
+    .brand-text h1 {
+      font-size: 1.12rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--slate-900);
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.76rem;
+      color: var(--slate-500);
+      font-weight: 500;
+    }
+
+    .pub-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Hero Banner */
+    .hero-section {
+      background: radial-gradient(circle at top right, #eef2ff 0%, #f8fafc 45%, #ffffff 100%);
+      border-bottom: 1px solid var(--slate-200);
+      padding: 56px 0 48px;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-title {
+      font-size: clamp(1.85rem, 4vw, 2.85rem);
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(0.98rem, 2vw, 1.12rem);
+      color: var(--slate-600);
+      margin-bottom: 28px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-search-wrap {
+      display: flex;
+      align-items: center;
+      max-width: 560px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1.5px solid var(--slate-300);
+      border-radius: var(--radius-md);
+      padding: 6px 8px 6px 16px;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+
+    .hero-search-wrap:focus-within {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
+    }
+
+    .hero-search-wrap input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--slate-900);
+      padding: 8px;
+    }
+
+    /* Filter Bar */
+    .catalog-section {
+      padding: 36px 0 72px;
+    }
+
+    .filter-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .category-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      max-width: 100%;
+    }
+
+    .cat-pill {
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: var(--white);
+      color: var(--slate-600);
+      border: 1px solid var(--slate-200);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .cat-pill:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .cat-pill.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+    }
+
+    .sort-select {
+      padding: 9px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--slate-300);
+      background: var(--white);
+      color: var(--slate-700);
+      font-weight: 500;
+      outline: none;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--slate-300);
+    }
+
+    .product-thumb-wrap {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: var(--slate-100);
+      overflow: hidden;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .product-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .product-card:hover .product-thumb-wrap img {
+      transform: scale(1.04);
+    }
+
+    .thumb-badges {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .badge-glass {
+      background: rgba(15, 23, 42, 0.78);
+      backdrop-filter: blur(6px);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
+
+    .badge-promo {
+      background: var(--emerald);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .product-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .product-desc {
+      font-size: 0.88rem;
+      color: var(--slate-600);
+      margin-bottom: 18px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .product-meta-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--slate-100);
+      margin-bottom: 14px;
+    }
+
+    .price-label {
+      font-size: 0.74rem;
+      color: var(--slate-500);
+      display: block;
+    }
+
+    .price-old {
+      font-size: 0.8rem;
+      color: var(--slate-400);
+      text-decoration: line-through;
+      margin-right: 6px;
+    }
+
+    .price-current {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+
+    .demo-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      color: var(--slate-500);
+      font-weight: 600;
+    }
+
+    .product-card-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+    }
+
+    /* ==========================================
+       HALAMAN DETAIL PRODUK + LIVE DEMO SANDBOX
+       ========================================== */
+    .detail-section {
+      padding: 32px 0 80px;
+    }
+
+    .detail-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .detail-overview-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 32px;
+      margin-bottom: 36px;
+    }
+
+    .detail-media-box {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--slate-200);
+      background: var(--slate-100);
+      aspect-ratio: 16 / 10;
+    }
+
+    .detail-media-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detail-info-col h2 {
+      font-size: clamp(1.45rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.25;
+      margin: 10px 0 12px;
+    }
+
+    .detail-price-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin: 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .detail-price-main {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .detail-full-desc {
+      color: var(--slate-600);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      white-space: pre-line;
+    }
+
+    .feature-list-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 10px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--slate-700);
+    }
+
+    .feature-check {
+      color: var(--emerald);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .detail-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* LIVE DEMO SANDBOX DI BAWAH DETAIL PRODUK */
+    .live-demo-wrapper {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .demo-header-bar {
+      background: var(--slate-900);
+      color: var(--white);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .demo-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .browser-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .browser-dots span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+
+    .demo-label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .live-pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.25);
+    }
+
+    .viewport-switcher {
+      display: flex;
+      align-items: center;
+      background: var(--slate-800);
+      padding: 4px;
+      border-radius: var(--radius-sm);
+      gap: 4px;
+    }
+
+    .vp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--slate-300);
+      transition: var(--transition);
+    }
+
+    .vp-btn:hover {
+      color: var(--white);
+    }
+
+    .vp-btn.active {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .demo-tools {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .demo-tool-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: var(--slate-800);
+      color: var(--slate-200);
+      border: 1px solid var(--slate-700);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .demo-tool-btn:hover {
+      background: var(--slate-700);
+      color: var(--white);
+    }
+
+    .demo-canvas {
+      background-color: #1e293b;
+      background-image: radial-gradient(#334155 1px, transparent 1px);
+      background-size: 18px 18px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 640px;
+      overflow-x: auto;
+    }
+
+    .demo-canvas.mode-desktop {
+      padding: 0;
+    }
+
+    .demo-iframe-container {
+      width: 100%;
+      height: 680px;
+      background: var(--white);
+      transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.35s ease;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .demo-iframe-container.vp-desktop {
+      width: 100%;
+      border-radius: 0;
+    }
+
+    .demo-iframe-container.vp-tablet {
+      width: 768px;
+      max-width: 100%;
+      border-radius: 16px;
+      border: 6px solid var(--slate-700);
+    }
+
+    .demo-iframe-container.vp-mobile {
+      width: 375px;
+      max-width: 100%;
+      border-radius: 24px;
+      border: 8px solid var(--slate-700);
+    }
+
+    .demo-iframe-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      background: var(--white);
+    }
+
+    .demo-footer-note {
+      background: var(--slate-50);
+      border-top: 1px solid var(--slate-200);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: var(--slate-600);
+    }
+
+    /* ==========================================
+       HALAMAN CHECKOUT & KONFIRMASI PEMBAYARAN
+       ========================================== */
+    .checkout-section {
+      padding: 32px 0 80px;
+    }
+
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .checkout-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .checkout-card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+
+    .checkout-card-sub {
+      font-size: 0.88rem;
+      color: var(--slate-500);
+      margin-bottom: 22px;
+    }
+
+    .payment-instruction-box {
+      background: var(--primary-soft);
+      border: 1px solid #c7d2fe;
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .payment-instruction-text {
+      font-size: 0.88rem;
+      color: var(--slate-800);
+      font-weight: 600;
+    }
+
+    .upload-dropzone {
+      border: 2px dashed var(--slate-300);
+      border-radius: var(--radius-md);
+      padding: 22px 16px;
+      text-align: center;
+      background: var(--slate-50);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .upload-dropzone:hover, .upload-dropzone.has-file {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .upload-dropzone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    .proof-preview-box {
+      margin-top: 12px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .proof-preview-img {
+      width: 72px;
+      height: 72px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--slate-200);
+      flex-shrink: 0;
+      background: var(--slate-100);
+    }
+
+    .summary-product-row {
+      display: flex;
+      gap: 14px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--slate-200);
+      margin-bottom: 16px;
+    }
+
+    .summary-thumb {
+      width: 84px;
+      height: 56px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: var(--slate-100);
+      flex-shrink: 0;
+    }
+
+    .summary-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: var(--slate-600);
+      margin-bottom: 10px;
+    }
+
+    .summary-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 1px solid var(--slate-200);
+      margin-top: 10px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--slate-900);
+    }
+
+    /* Checkout Success Confirmation View */
+    .success-confirm-card {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+
+    .success-icon-circle {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: var(--emerald-soft);
+      color: var(--emerald);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+    }
+
+    .receipt-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      text-align: left;
+      margin: 22px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .receipt-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px dashed var(--slate-200);
+      padding-bottom: 8px;
+    }
+
+    .receipt-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    /* Footer Publik */
+    .pub-footer {
+      background: var(--white);
+      border-top: 1px solid var(--slate-200);
+      padding: 28px 0;
+      color: var(--slate-500);
+      font-size: 0.86rem;
+    }
+
+    .pub-footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* ==========================================
+       WAJAH 2: ADMIN WORKSPACE (BERBEDA TOTAL)
+       ========================================== */
+    .admin-layout {
+      display: flex;
+      min-height: 100vh;
+      background: var(--slate-100);
+    }
+
+    .admin-sidebar {
+      width: 265px;
+      background: var(--slate-900);
+      color: var(--slate-300);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+      z-index: 50;
+    }
+
+    .admin-sidebar-header {
+      padding: 22px 20px;
+      border-bottom: 1px solid var(--slate-800);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .admin-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .admin-brand-badge {
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.68rem;
+      padding: 2px 7px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .admin-nav {
+      padding: 18px 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .admin-nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: var(--radius-sm);
+      color: var(--slate-300);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-align: left;
+      transition: var(--transition);
+    }
+
+    .admin-nav-item-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .admin-nav-item:hover {
+      background: var(--slate-800);
+      color: var(--white);
+    }
+
+    .admin-nav-item.active {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+    }
+
+    .nav-count-pill {
+      background: var(--amber);
+      color: var(--slate-950);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    .admin-sidebar-footer {
+      padding: 16px 12px;
+      border-top: 1px solid var(--slate-800);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .admin-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .admin-topbar {
+      height: 68px;
+      background: var(--white);
+      border-bottom: 1px solid var(--slate-200);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .admin-topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      padding: 8px;
+      border-radius: 8px;
+      background: var(--slate-100);
+      color: var(--slate-800);
+    }
+
+    .admin-content {
+      padding: 28px 24px;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .kpi-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-info span {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--slate-500);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .kpi-info strong {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+
+    .kpi-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .panel-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .panel-header {
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--slate-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .panel-header h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .panel-body {
+      padding: 22px;
+    }
+
+    /* Tabel Produk & Pesanan Admin */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    .admin-table th {
+      background: var(--slate-50);
+      color: var(--slate-600);
+      font-weight: 700;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--slate-200);
+      white-space: nowrap;
+    }
+
+    .admin-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--slate-100);
+      vertical-align: middle;
+    }
+
+    .admin-table tr:hover td {
+      background: var(--slate-50);
+    }
+
+    .tbl-product-cell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 240px;
+    }
+
+    .tbl-thumb {
+      width: 64px;
+      height: 40px;
+      border-radius: 6px;
+      object-fit: cover;
+      background: var(--slate-200);
+      flex-shrink: 0;
+    }
+
+    .tbl-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    /* ==========================================
+       FORM & MODAL SYSTEM
+       ========================================== */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--slate-700);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 13px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      color: var(--slate-900);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+    }
+
+    .form-hint {
+      font-size: 0.76rem;
+      color: var(--slate-500);
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.62);
+      backdrop-filter: blur(5px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      overflow-y: auto;
+    }
+
+    .modal-box {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 640px;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-lg);
+      animation: modalPop 0.2s ease-out;
+    }
+
+    .modal-box.modal-sm {
+      max-width: 420px;
+    }
+
+    .modal-box.modal-studio {
+      max-width: 980px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    @keyframes modalPop {
+      from { opacity: 0; transform: scale(0.96) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--slate-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--white);
+    }
+
+    .modal-header-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .modal-header-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .modal-header h3 {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.25;
+    }
+
+    .modal-header p {
+      font-size: 0.8rem;
+      color: var(--slate-500);
+      margin-top: 2px;
+    }
+
+    .modal-body {
+      padding: 22px;
+      overflow-y: auto;
+    }
+
+    .modal-footer {
+      padding: 15px 24px;
+      border-top: 1px solid var(--slate-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--slate-50);
+      border-bottom-left-radius: var(--radius-lg);
+      border-bottom-right-radius: var(--radius-lg);
+    }
+
+    /* ==========================================
+       STUDIO EDITOR PRODUK ELEGAN (2 KOLOM + LIVE PREVIEW)
+       ========================================== */
+    .product-studio-body {
+      display: grid;
+      grid-template-columns: 1.38fr 0.92fr;
+      gap: 0;
+      padding: 0;
+      overflow-y: auto;
+      background: var(--slate-50);
+    }
+
+    .studio-form-pane {
+      padding: 24px;
+      background: var(--white);
+      border-right: 1px solid var(--slate-200);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .studio-section-card {
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      background: var(--white);
+    }
+
+    .studio-section-header {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--slate-100);
+    }
+
+    .studio-step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .studio-section-header h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    /* Input dengan Prefix (Rp) & Action Button */
+    .input-affix-wrap {
+      display: flex;
+      align-items: stretch;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .input-affix-wrap:focus-within {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+    }
+
+    .input-prefix {
+      padding: 0 12px;
+      background: var(--slate-50);
+      color: var(--slate-500);
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid var(--slate-200);
+      user-select: none;
+    }
+
+    .input-affix-wrap input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 10px 12px;
+      background: transparent;
+      color: var(--slate-900);
+      min-width: 0;
+    }
+
+    .input-suffix-btn {
+      padding: 0 12px;
+      background: var(--slate-50);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-left: 1px solid var(--slate-200);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition);
+    }
+
+    .input-suffix-btn:hover {
+      background: var(--primary-soft);
+    }
+
+    /* Switcher & Upload Zone Thumbnail Produk */
+    .thumb-mode-tabs {
+      display: inline-flex;
+      background: var(--slate-100);
+      padding: 3px;
+      border-radius: 8px;
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .thumb-mode-btn {
+      padding: 5px 11px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--slate-600);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .thumb-mode-btn.active {
+      background: var(--white);
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .thumb-upload-box {
+      border: 2px dashed var(--slate-300);
+      border-radius: var(--radius-sm);
+      padding: 16px 14px;
+      text-align: center;
+      background: var(--slate-50);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .thumb-upload-box:hover,
+    .thumb-upload-box.has-file {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+    }
+
+    .thumb-upload-box input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    .thumb-file-status {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: var(--emerald-soft);
+      border: 1px solid #a7f3d0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.78rem;
+      color: var(--emerald-hover);
+      font-weight: 600;
+    }
+
+    /* Status Toggle Cards */
+    .status-radio-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .status-radio-option {
+      border: 1.5px solid var(--slate-200);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      transition: var(--transition);
+      background: var(--white);
+    }
+
+    .status-radio-option:hover {
+      border-color: var(--slate-300);
+    }
+
+    .status-radio-option.selected-active {
+      border-color: var(--emerald);
+      background: var(--emerald-soft);
+    }
+
+    .status-radio-option.selected-draft {
+      border-color: var(--amber);
+      background: var(--amber-soft);
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Discount Live Info Banner */
+    .discount-calc-pill {
+      margin-top: 8px;
+      padding: 7px 12px;
+      border-radius: 8px;
+      background: var(--emerald-soft);
+      color: var(--emerald-hover);
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Right Column: Live Card Preview */
+    .studio-preview-pane {
+      padding: 24px;
+      background: radial-gradient(circle at top right, #eef2ff 0%, #f8fafc 70%);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .studio-preview-sticky {
+      position: sticky;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .preview-pane-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--slate-500);
+    }
+
+    .preview-card-mockup {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .preview-tips-box {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      font-size: 0.8rem;
+      color: var(--slate-600);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* Loading & Toast */
+    .loading-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(3px);
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid var(--slate-200);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .toast-container {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 300;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 360px;
+    }
+
+    .toast {
+      padding: 13px 16px;
+      border-radius: var(--radius-md);
+      background: var(--slate-900);
+      color: var(--white);
+      font-size: 0.88rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: slideIn 0.25s ease;
+    }
+
+    .toast.success { border-left: 4px solid var(--emerald); }
+    .toast.error { border-left: 4px solid var(--danger); }
+    .toast.info { border-left: 4px solid var(--primary); }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 56px 20px;
+      background: var(--white);
+      border: 1px dashed var(--slate-300);
+      border-radius: var(--radius-lg);
+      color: var(--slate-500);
+    }
+
+    /* ==========================================
+       RESPONSIVE BREAKPOINTS
+       ========================================== */
+    @media (max-width: 900px) {
+      .detail-overview-card,
+      .checkout-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-studio-body {
+        grid-template-columns: 1fr;
+      }
+
+      .studio-form-pane {
+        border-right: none;
+        border-bottom: 1px solid var(--slate-200);
+      }
+
+      .admin-sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+      }
+
+      .admin-sidebar.open {
+        transform: translateX(0);
+      }
+
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .status-radio-group {
+        grid-template-columns: 1fr;
+      }
+
+      .demo-header-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .demo-iframe-container {
+        height: 520px;
+      }
+
+      .success-confirm-card {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GLOBAL LOADING OVERLAY -->
+  <div id="loadingOverlay" class="loading-overlay hidden">
+    <div class="spinner"></div>
+    <p id="loadingText" style="font-weight: 600; color: var(--slate-700);">Memuat data toko...</p>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- =========================================================
+       WAJAH 1: HALAMAN PUBLIK (STOREFRONT, LIVE DEMO & CHECKOUT)
+       ========================================================= -->
+  <div id="publicView">
+    <header class="pub-navbar">
+      <div class="container pub-navbar-inner">
+        <a href="#catalog" class="brand-logo" onclick="navigateToCatalog(event)">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <h1 id="navStoreName">DigiStore Studio</h1>
+            <span id="navStoreTagline">Katalog Produk Digital & Live Demo</span>
+          </div>
+        </a>
+
+        <div class="pub-nav-actions">
+          <span id="previewModeChip" class="badge badge-amber hidden">Mode Preview</span>
+          <button id="btnGoAdminTop" class="btn btn-primary btn-sm hidden" onclick="switchWorkspace('admin')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            Dashboard Admin
+          </button>
+          <button class="btn btn-outline btn-sm" onclick="navigateToCatalog(event)">
+            Katalog Produk
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- VIEW 1A: KATALOG PUBLIK -->
+    <main id="publicCatalogSection">
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-pill">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              Uji Langsung Sebelum Membeli via Live Demo Interaktif
+            </div>
+            <h2 id="heroTitle" class="hero-title">Solusi Website & Aplikasi Digital Siap Pakai</h2>
+            <p id="heroSubtitle" class="hero-subtitle">Pilih produk digital berkualitas tinggi dan coba langsung tampilan serta fiturnya di layar Desktop, Tablet, maupun Smartphone sebelum melakukan pemesanan.</p>
+
+            <div class="hero-search-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="publicSearchInput" placeholder="Cari template website, sistem kasir, landing page..." oninput="renderPublicCatalog()" />
+              <button class="btn btn-primary btn-sm" onclick="renderPublicCatalog()">Cari</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="catalog">
+        <div class="container">
+          <div class="filter-toolbar">
+            <div id="categoryPills" class="category-pills"></div>
+
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <label for="publicSortSelect" style="font-size: 0.85rem; color: var(--slate-500); font-weight: 600;">Urutkan:</label>
+              <select id="publicSortSelect" class="sort-select" onchange="renderPublicCatalog()">
+                <option value="newest">Terbaru</option>
+                <option value="popular">Demo Terpopuler</option>
+                <option value="price_asc">Harga Terendah</option>
+                <option value="price_desc">Harga Tertinggi</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="publicProductGrid" class="product-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- VIEW 1B: DETAIL PRODUK + LIVE DEMO DI BAWAHNYA -->
+    <section id="publicDetailSection" class="detail-section hidden">
+      <div class="container">
+        <div class="detail-topbar">
+          <button class="btn btn-outline" onclick="navigateToCatalog()">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Kembali ke Katalog
+          </button>
+          <span id="detailDemoCounterBadge" class="badge badge-primary">0x Live Demo Dicoba</span>
+        </div>
+
+        <!-- BAGIAN ATAS: INFORMASI & SPESIFIKASI PRODUK -->
+        <div class="detail-overview-card">
+          <div>
+            <div class="detail-media-box">
+              <img id="detailThumbImg" src="" alt="Preview Produk" />
+            </div>
+          </div>
+
+          <div class="detail-info-col">
+            <span id="detailCategoryBadge" class="badge badge-primary">Kategori</span>
+            <h2 id="detailTitle">Judul Produk Digital</h2>
+
+            <div class="detail-price-box">
+              <div>
+                <span style="font-size: 0.78rem; color: var(--slate-500); display: block;">Investasi Lisensi Produk</span>
+                <div style="display: flex; align-items: baseline; gap: 10px;">
+                  <span id="detailCurrentPrice" class="detail-price-main">Rp 0</span>
+                  <span id="detailOldPrice" class="price-old hidden">Rp 0</span>
+                </div>
+              </div>
+              <span id="detailDiscountTag" class="badge badge-emerald hidden">Harga Promo</span>
+            </div>
+
+            <p id="detailFullDesc" class="detail-full-desc"></p>
+
+            <div class="feature-list-title">Fitur Utama yang Didapatkan:</div>
+            <ul id="detailFeatureList" class="feature-list"></ul>
+
+            <div class="detail-cta-group">
+              <button type="button" id="detailOrderBtn" class="btn btn-emerald btn-lg" onclick="openCheckoutPage()">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                Pesan Sekarang
+              </button>
+              <a href="#liveDemoSandbox" class="btn btn-primary btn-lg">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                Coba Live Demo di Bawah
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAGIAN BAWAH: LIVE DEMO INTERAKTIF -->
+        <div id="liveDemoSandbox" class="live-demo-wrapper">
+          <div class="demo-header-bar">
+            <div class="demo-title-group">
+              <div class="browser-dots">
+                <span class="dot-red"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green"></span>
+              </div>
+              <div class="demo-label">
+                <span class="live-pulse"></span>
+                Live Demo Interaktif: <span id="demoBarProductTitle" style="color: #93c5fd;">Produk</span>
+              </div>
+            </div>
+
+            <!-- PENGATUR UKURAN LAYAR DEMO -->
+            <div class="viewport-switcher" role="group" aria-label="Pilih Ukuran Layar Demo">
+              <button type="button" class="vp-btn active" data-vp="desktop" onclick="setDemoViewport('desktop')">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                Desktop
+              </button>
+              <button type="button" class="vp-btn" data-vp="tablet" onclick="setDemoViewport('tablet')">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+                Tablet
+              </button>
+              <button type="button" class="vp-btn" data-vp="mobile" onclick="setDemoViewport('mobile')">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+                Mobile
+              </button>
+            </div>
+
+            <div class="demo-tools">
+              <button type="button" class="demo-tool-btn" onclick="reloadDemoIframe()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <polyline points="23 4 23 10 17 10"></polyline>
+                  <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                </svg>
+                Muat Ulang
+              </button>
+              <a id="demoExternalLink" href="#" target="_blank" rel="noopener noreferrer" class="demo-tool-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                Buka Tab Baru
+              </a>
+            </div>
+          </div>
+
+          <div id="demoCanvas" class="demo-canvas mode-desktop">
+            <div id="demoIframeContainer" class="demo-iframe-container vp-desktop">
+              <iframe id="liveDemoIframe" src="about:blank" title="Live Demo Produk Digital" loading="lazy" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="demo-footer-note">
+            <span>Tips: Gunakan tombol <strong>Desktop / Tablet / Mobile</strong> di atas untuk menguji responsivitas tampilan produk.</span>
+            <span>Tampilan tidak muncul? Klik <strong>Buka Tab Baru</strong> di pojok kanan atas panel demo.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 1C: HALAMAN CHECKOUT, UPLOAD BUKTI BAYAR & KONFIRMASI -->
+    <section id="publicCheckoutSection" class="checkout-section hidden">
+      <div class="container">
+        <div class="detail-topbar">
+          <button type="button" class="btn btn-outline" onclick="backToProductDetail()">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Kembali ke Detail Produk
+          </button>
+          <span class="badge badge-primary">Formulir Pemesanan & Konfirmasi Pembayaran</span>
+        </div>
+
+        <!-- FORM CHECKOUT UTAMA -->
+        <div id="checkoutFormWrapper" class="checkout-grid">
+          <div class="checkout-card">
+            <h2 class="checkout-card-title">Lengkapi Data Pembeli & Bukti Pembayaran</h2>
+            <p class="checkout-card-sub">File dan akses produk digital akan dikirimkan ke Email & WhatsApp Anda setelah pembayaran diverifikasi Admin.</p>
+
+            <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
+              <div class="form-grid">
+                <div class="form-group full">
+                  <label for="chkFullName">Nama Lengkap *</label>
+                  <input type="text" id="chkFullName" class="form-control" placeholder="Masukkan nama lengkap Anda" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="chkWhatsapp">Nomor WhatsApp Aktif *</label>
+                  <input type="tel" id="chkWhatsapp" class="form-control" placeholder="Contoh: 081234567890" required />
+                  <span class="form-hint">Pastikan nomor terhubung dengan WhatsApp untuk konfirmasi cepat.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="chkEmail">Alamat Email *</label>
+                  <input type="email" id="chkEmail" class="form-control" placeholder="nama@email.com" required />
+                  <span class="form-hint">Tautan unduhan / lisensi produk akan dikirim ke email ini.</span>
+                </div>
+
+                <div class="form-group full">
+                  <label for="chkPaymentMethod">Pilih Metode Pembayaran *</label>
+                  <select id="chkPaymentMethod" class="form-control" required onchange="onPaymentMethodChange()"></select>
+
+                  <div id="paymentInstructionBox" class="payment-instruction-box">
+                    <div>
+                      <span style="font-size: 0.75rem; color: var(--primary); font-weight: 700; display: block;">Tujuan Transfer / Pembayaran:</span>
+                      <span id="paymentInstructionText" class="payment-instruction-text">-</span>
+                    </div>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="copyPaymentTarget()">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                      </svg>
+                      Salin Info
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-group full">
+                  <label for="chkProofFile">Upload Bukti Pembayaran (JPG, PNG, WEBP, atau PDF — Maks. 4 MB) *</label>
+                  <div id="uploadDropzone" class="upload-dropzone">
+                    <input type="file" id="chkProofFile" accept="image/jpeg,image/png,image/webp,application/pdf" required onchange="handleProofFileSelect(event)" />
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" style="margin: 0 auto 8px;">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="17 8 12 3 7 8"></polyline>
+                      <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p style="font-weight: 700; color: var(--slate-800); font-size: 0.92rem;">Klik untuk memilih atau seret file bukti transfer ke sini</p>
+                    <span style="font-size: 0.78rem; color: var(--slate-500);">Format didukung: JPG, PNG, WEBP, PDF (Maksimal 4 MB)</span>
+                  </div>
+
+                  <div id="proofPreviewBox" class="proof-preview-box hidden">
+                    <img id="proofPreviewImg" class="proof-preview-img" src="" alt="Pratinjau Bukti Bayar" />
+                    <div style="flex: 1; min-width: 0;">
+                      <strong id="proofFileName" style="display: block; font-size: 0.88rem; color: var(--slate-900); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">bukti-transfer.jpg</strong>
+                      <span id="proofFileSize" style="font-size: 0.78rem; color: var(--slate-500);">0 KB</span>
+                    </div>
+                    <button type="button" class="btn btn-outline btn-sm" onclick="clearProofFile()">Ganti File</button>
+                  </div>
+                </div>
+
+                <div class="form-group full">
+                  <label for="chkNotes">Catatan Tambahan (Opsional)</label>
+                  <input type="text" id="chkNotes" class="form-control" placeholder="Contoh: Transfer atas nama Budi Santoso" />
+                </div>
+              </div>
+
+              <div style="margin-top: 24px;">
+                <button type="submit" id="btnSubmitCheckout" class="btn btn-emerald btn-lg" style="width: 100%;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Kirim Bukti Bayar & Konfirmasi
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- RINGKASAN PRODUK YANG DIPESAN -->
+          <aside class="checkout-card">
+            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 16px;">Ringkasan Pesanan</h3>
+
+            <div class="summary-product-row">
+              <img id="chkSummaryThumb" class="summary-thumb" src="" alt="Produk" />
+              <div>
+                <span id="chkSummaryCategory" class="badge badge-primary" style="margin-bottom: 4px;">Kategori</span>
+                <h4 id="chkSummaryTitle" style="font-size: 0.95rem; font-weight: 700; color: var(--slate-900); line-height: 1.35;">Nama Produk</h4>
+              </div>
+            </div>
+
+            <div class="summary-line">
+              <span>Harga Produk</span>
+              <span id="chkSummaryNormalPrice">Rp 0</span>
+            </div>
+            <div id="chkSummaryDiscountRow" class="summary-line hidden" style="color: var(--emerald-hover); font-weight: 600;">
+              <span>Potongan Promo</span>
+              <span id="chkSummaryDiscountVal">- Rp 0</span>
+            </div>
+            <div class="summary-line">
+              <span>Biaya Layanan</span>
+              <span>Rp 0</span>
+            </div>
+
+            <div class="summary-total">
+              <span>Total Pembayaran</span>
+              <span id="chkSummaryTotalPrice" style="color: var(--primary);">Rp 0</span>
+            </div>
+
+            <div style="margin-top: 18px; padding: 12px 14px; background: var(--slate-50); border-radius: 10px; font-size: 0.8rem; color: var(--slate-600);">
+              <strong style="color: var(--slate-800); display: block; margin-bottom: 4px;">Alur Setelah Konfirmasi:</strong>
+              1. Bukti pembayaran tercatat otomatis di sistem kami.<br />
+              2. Admin memverifikasi mutasi pembayaran Anda.<br />
+              3. Paket file & lisensi dikirim ke Email dan WhatsApp Anda.
+            </div>
+          </aside>
+        </div>
+
+        <!-- HALAMAN KONFIRMASI SUKSES SETELAH KIRIM BUKTI BAYAR -->
+        <div id="checkoutSuccessWrapper" class="success-confirm-card hidden">
+          <div class="success-icon-circle">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+
+          <span class="badge badge-emerald" style="margin-bottom: 10px;">Konfirmasi Pembayaran Terkirim</span>
+          <h2 style="font-size: 1.55rem; font-weight: 800; color: var(--slate-900); margin-bottom: 8px;">Terima Kasih! Pesanan Anda Sedang Diproses</h2>
+          <p style="color: var(--slate-600); font-size: 0.94rem;">
+            Bukti pembayaran Anda telah kami terima. Simpan nomor invoice di bawah ini sebagai referensi konfirmasi.
+          </p>
+
+          <div class="receipt-box">
+            <div class="receipt-row">
+              <span style="color: var(--slate-500);">Nomor Invoice</span>
+              <strong id="recOrderId" style="color: var(--primary);">ORD-000000</strong>
+            </div>
+            <div class="receipt-row">
+              <span style="color: var(--slate-500);">Produk Digital</span>
+              <strong id="recProductTitle">-</strong>
+            </div>
+            <div class="receipt-row">
+              <span style="color: var(--slate-500);">Nama Pembeli</span>
+              <strong id="recCustomerName">-</strong>
+            </div>
+            <div class="receipt-row">
+              <span style="color: var(--slate-500);">WhatsApp / Email</span>
+              <strong id="recContact">-</strong>
+            </div>
+            <div class="receipt-row">
+              <span style="color: var(--slate-500);">Metode Pembayaran</span>
+              <strong id="recPaymentMethod">-</strong>
+            </div>
+            <div class="receipt-row">
+              <span style="color: var(--slate-500);">Total Dibayarkan</span>
+              <strong id="recAmount" style="color: var(--emerald-hover);">Rp 0</strong>
+            </div>
+            <div class="receipt-row">
+              <span style="color: var(--slate-500);">Status Pesanan</span>
+              <span class="badge badge-amber">Menunggu Verifikasi Admin</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+            <a id="recWhatsappConfirmBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-emerald btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              Notifikasi Cepat ke WhatsApp Admin
+            </a>
+            <button type="button" class="btn btn-outline btn-lg" onclick="navigateToCatalog()">
+              Kembali ke Katalog Produk
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pub-footer">
+      <div class="container pub-footer-inner">
+        <p>&copy; <span id="footerYear">2026</span> <strong id="footerStoreName">DigiStore Studio</strong>. Seluruh hak cipta dilindungi.</p>
+        <div>
+          <button id="btnFooterAdminAccess" class="btn btn-ghost btn-sm" onclick="handleAdminAccessClick()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Akses Admin
+          </button>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- =========================================================
+       WAJAH 2: WORKSPACE ADMIN (CRUD, PESANAN & PENGATURAN TOKO)
+       ========================================================= -->
+  <div id="adminView" class="admin-layout hidden">
+    <aside id="adminSidebar" class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <div class="admin-brand">
+          <span>DigiStore</span>
+          <span class="admin-brand-badge">Admin</span>
+        </div>
+        <button class="mobile-menu-btn" onclick="toggleAdminSidebar()" aria-label="Tutup Menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="admin-nav">
+        <button class="admin-nav-item active" data-tab="dashboard" onclick="switchAdminTab('dashboard')">
+          <span class="admin-nav-item-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            Dashboard Ringkasan
+          </span>
+        </button>
+
+        <button class="admin-nav-item" data-tab="products" onclick="switchAdminTab('products')">
+          <span class="admin-nav-item-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+            Kelola Produk (CRUD)
+          </span>
+        </button>
+
+        <button class="admin-nav-item" data-tab="orders" onclick="switchAdminTab('orders')">
+          <span class="admin-nav-item-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            Pesanan & Pembayaran
+          </span>
+          <span id="sidebarPendingOrderBadge" class="nav-count-pill hidden">0</span>
+        </button>
+
+        <button class="admin-nav-item" data-tab="settings" onclick="switchAdminTab('settings')">
+          <span class="admin-nav-item-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+            Pengaturan & Akun
+          </span>
+        </button>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <button class="admin-nav-item" onclick="switchWorkspace('public')">
+          <span class="admin-nav-item-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            Lihat Toko Publik
+          </span>
+        </button>
+        <button class="admin-nav-item" style="color: #fca5a5;" onclick="logoutAdmin()">
+          <span class="admin-nav-item-left">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            Logout Admin
+          </span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <button class="mobile-menu-btn" onclick="toggleAdminSidebar()" aria-label="Buka Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <h2 id="adminPageTitle" style="font-size: 1.15rem; font-weight: 800; color: var(--slate-900);">Dashboard Ringkasan</h2>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span id="adminEnvBadge" class="badge badge-amber">Preview Mode</span>
+          <span id="adminUserLabel" style="font-size: 0.85rem; font-weight: 600; color: var(--slate-600);">Admin</span>
+        </div>
+      </header>
+
+      <main class="admin-content">
+        <!-- TAB 1: DASHBOARD RINGKASAN -->
+        <div id="adminTabDashboard">
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-info">
+                <span>Total Katalog Produk</span>
+                <strong id="kpiTotalProducts">0</strong>
+              </div>
+              <div class="kpi-icon" style="background: var(--primary-soft); color: var(--primary);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                </svg>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-info">
+                <span>Produk Aktif (Publik)</span>
+                <strong id="kpiActiveProducts">0</strong>
+              </div>
+              <div class="kpi-icon" style="background: var(--emerald-soft); color: var(--emerald);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-info">
+                <span>Pesanan Masuk (Pending)</span>
+                <strong id="kpiTotalOrders">0</strong>
+              </div>
+              <div class="kpi-icon" style="background: var(--amber-soft); color: var(--amber);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-info">
+                <span>Total Tayangan Live Demo</span>
+                <strong id="kpiTotalDemoViews">0</strong>
+              </div>
+              <div class="kpi-icon" style="background: #f3e8ff; color: #7e22ce;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-header">
+              <h3>Produk dengan Interaksi Live Demo Tertinggi</h3>
+              <button class="btn btn-primary btn-sm" onclick="openProductModal()">
+                + Tambah Produk Baru
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Produk Digital</th>
+                    <th>Kategori</th>
+                    <th>Harga</th>
+                    <th>Status</th>
+                    <th>Live Demo Dicoba</th>
+                  </tr>
+                </thead>
+                <tbody id="dashboardTopDemoTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: KELOLA PRODUK (CRUD LENGKAP) -->
+        <div id="adminTabProducts" class="hidden">
+          <div class="panel-card">
+            <div class="panel-header">
+              <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+                <input type="text" id="adminSearchInput" class="form-control" style="width: 240px;" placeholder="Cari nama atau kategori produk..." oninput="renderAdminProductsTable()" />
+                <select id="adminStatusFilter" class="form-control" style="width: 150px;" onchange="renderAdminProductsTable()">
+                  <option value="all">Semua Status</option>
+                  <option value="active">Aktif</option>
+                  <option value="draft">Draft</option>
+                </select>
+              </div>
+
+              <button class="btn btn-primary" onclick="openProductModal()">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                Tambah Produk
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Produk</th>
+                    <th>Kategori</th>
+                    <th>Harga</th>
+                    <th>URL Live Demo</th>
+                    <th>Status</th>
+                    <th>Demo</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="adminProductsTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: PESANAN & KONFIRMASI BUKTI PEMBAYARAN -->
+        <div id="adminTabOrders" class="hidden">
+          <div class="panel-card">
+            <div class="panel-header">
+              <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+                <input type="text" id="adminOrderSearchInput" class="form-control" style="width: 250px;" placeholder="Cari invoice, nama, email, produk..." oninput="renderAdminOrdersTable()" />
+                <select id="adminOrderStatusFilter" class="form-control" style="width: 190px;" onchange="renderAdminOrdersTable()">
+                  <option value="all">Semua Status Pesanan</option>
+                  <option value="pending">Menunggu Verifikasi</option>
+                  <option value="confirmed">Lunas & Terkirim</option>
+                  <option value="rejected">Ditolak</option>
+                </select>
+              </div>
+              <span style="font-size: 0.82rem; color: var(--slate-500);">Klik tombol <strong>Lihat Bukti</strong> untuk mengecek struk pembayaran pembeli.</span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Invoice & Waktu</th>
+                    <th>Data Pembeli</th>
+                    <th>Produk & Nominal</th>
+                    <th>Metode Bayar</th>
+                    <th>Bukti Bayar</th>
+                    <th>Status</th>
+                    <th>Aksi Verifikasi</th>
+                  </tr>
+                </thead>
+                <tbody id="adminOrdersTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: PENGATURAN TOKO & PASSWORD ADMIN -->
+        <div id="adminTabSettings" class="hidden">
+          <div class="panel-card">
+            <div class="panel-header">
+              <h3>Identitas Toko, Metode Pembayaran & Integrasi WhatsApp</h3>
+            </div>
+            <form id="storeSettingsForm" class="panel-body" onsubmit="saveStoreSettings(event)">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="setStoreName">Nama Toko Digital *</label>
+                  <input type="text" id="setStoreName" class="form-control" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="setStoreTagline">Tagline Singkat Toko *</label>
+                  <input type="text" id="setStoreTagline" class="form-control" required />
+                </div>
+
+                <div class="form-group full">
+                  <label for="setHeroTitle">Judul Utama Banner (Hero Title) *</label>
+                  <input type="text" id="setHeroTitle" class="form-control" required />
+                </div>
+
+                <div class="form-group full">
+                  <label for="setHeroSubtitle">Subjudul Banner (Hero Subtitle) *</label>
+                  <textarea id="setHeroSubtitle" class="form-control" rows="2" required></textarea>
+                </div>
+
+                <div class="form-group full">
+                  <label for="setPaymentMethods">Daftar Metode Pembayaran & Nomor Rekening (1 metode per baris) *</label>
+                  <textarea id="setPaymentMethods" class="form-control" rows="4" required placeholder="Bank BCA - 1234567890 a.n. DigiStore Studio&#10;Bank Mandiri - 0987654321 a.n. DigiStore Studio&#10;E-Wallet DANA / GoPay - 081234567890 a.n. DigiStore Studio"></textarea>
+                  <span class="form-hint">Pilihan ini akan muncul di halaman checkout pembeli saat mengunggah bukti pembayaran.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="setWhatsappNumber">Nomor WhatsApp Admin (Format 628xxx) *</label>
+                  <input type="text" id="setWhatsappNumber" class="form-control" placeholder="6281234567890" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="setWaTemplate">Template Pesan Konfirmasi WhatsApp *</label>
+                  <input type="text" id="setWaTemplate" class="form-control" required />
+                  <span class="form-hint">Variabel: <code>{invoice_id}</code>, <code>{product_name}</code>, <code>{price}</code>, <code>{customer_name}</code>, <code>{payment_method}</code></span>
+                </div>
+              </div>
+
+              <div style="margin-top: 20px; display: flex; justify-content: flex-end;">
+                <button type="submit" class="btn btn-primary">Simpan Pengaturan Toko</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-header">
+              <h3>Keamanan Akun — Ubah Password Admin</h3>
+            </div>
+            <form id="changePasswordForm" class="panel-body" onsubmit="handleChangePassword(event)">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="oldPasswordInput">Password Saat Ini *</label>
+                  <input type="password" id="oldPasswordInput" class="form-control" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="newPasswordInput">Password Baru (Min. 6 Karakter) *</label>
+                  <input type="password" id="newPasswordInput" class="form-control" minlength="6" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="confirmPasswordInput">Konfirmasi Password Baru *</label>
+                  <input type="password" id="confirmPasswordInput" class="form-control" minlength="6" required />
+                </div>
+              </div>
+
+              <div style="margin-top: 20px; display: flex; justify-content: flex-end;">
+                <button type="submit" class="btn btn-outline">Perbarui Password Admin</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL LOGIN KHUSUS ADMIN
+       ========================================================= -->
+  <div id="loginModal" class="modal-backdrop hidden" onclick="closeModalOnBackdrop(event, 'loginModal')">
+    <div class="modal-box modal-sm">
+      <div class="modal-header">
+        <h3>Login Administrator</h3>
+        <button class="btn btn-ghost btn-sm" onclick="closeModal('loginModal')" aria-label="Tutup">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+        <div class="modal-body" style="display: flex; flex-direction: column; gap: 14px;">
+          <p style="font-size: 0.85rem; color: var(--slate-600);">
+            Masuk untuk mengelola katalog produk digital, memverifikasi bukti pembayaran pesanan, dan mengatur toko.
+          </p>
+
+          <div id="previewLoginHint" class="hidden" style="background: var(--primary-soft); color: var(--primary); padding: 10px 12px; border-radius: 8px; font-size: 0.8rem;">
+            <strong>Akun Preview:</strong> Username <code>admin</code> | Password <code>123456</code>
+          </div>
+
+          <div class="form-group">
+            <label for="loginUsername">Username</label>
+            <input type="text" id="loginUsername" class="form-control" placeholder="Masukkan username admin" required autocomplete="username" />
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" class="form-control" placeholder="Masukkan password" required autocomplete="current-password" />
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeModal('loginModal')">Batal</button>
+          <button type="submit" class="btn btn-primary">Masuk Dashboard</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL ELEGAN: TAMBAH / EDIT PRODUK DIGITAL (STUDIO + LIVE PREVIEW)
+       ========================================================= -->
+  <div id="productModal" class="modal-backdrop hidden" onclick="closeModalOnBackdrop(event, 'productModal')">
+    <div class="modal-box modal-studio">
+      <div class="modal-header">
+        <div class="modal-header-title-wrap">
+          <div class="modal-header-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 id="productModalTitle">Tambah Produk Digital Baru</h3>
+            <p id="productModalSubtitle">Lengkapi detail produk dan pantau pratinjau kartu etalase secara langsung.</p>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-ghost btn-sm" onclick="closeModal('productModal')" aria-label="Tutup">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <form id="productForm" onsubmit="handleProductSubmit(event)" style="display: flex; flex-direction: column; flex: 1; min-height: 0;">
+        <input type="hidden" id="prodId" />
+
+        <div class="product-studio-body">
+          <!-- KOLOM KIRI: FORM TERSTRUKTUR -->
+          <div class="studio-form-pane">
+            <!-- BAGIAN 1: IDENTITAS & STATUS -->
+            <div class="studio-section-card">
+              <div class="studio-section-header">
+                <span class="studio-step-num">1</span>
+                <h4>Informasi Dasar & Status Publikasi</h4>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group full">
+                  <label for="prodTitle">Nama Produk Digital *</label>
+                  <input type="text" id="prodTitle" class="form-control" placeholder="Contoh: NovaCorp — Template Website Company Profile" required oninput="updateProductModalLivePreview()" />
+                </div>
+
+                <div class="form-group">
+                  <label for="prodCategory">Kategori Produk *</label>
+                  <input type="text" id="prodCategory" list="categorySuggestions" class="form-control" placeholder="Pilih atau ketik kategori..." required oninput="updateProductModalLivePreview()" />
+                  <datalist id="categorySuggestions">
+                    <option value="Company Profile"></option>
+                    <option value="Web App & SaaS"></option>
+                    <option value="Landing Page"></option>
+                    <option value="E-Commerce"></option>
+                    <option value="Sistem Informasi"></option>
+                    <option value="Portofolio"></option>
+                  </datalist>
+                </div>
+
+                <div class="form-group">
+                  <label>Status Publikasi *</label>
+                  <select id="prodStatus" class="hidden" onchange="syncStatusRadioCards(); updateProductModalLivePreview();">
+                    <option value="active">Aktif</option>
+                    <option value="draft">Draft</option>
+                  </select>
+                  <div class="status-radio-group">
+                    <div id="statusCardActive" class="status-radio-option selected-active" onclick="selectProductStatusRadio('active')">
+                      <span class="status-dot" style="background: var(--emerald);"></span>
+                      <div>
+                        <strong style="display: block; font-size: 0.82rem; color: var(--slate-900);">Aktif</strong>
+                        <span style="font-size: 0.7rem; color: var(--slate-500);">Tampil di toko</span>
+                      </div>
+                    </div>
+                    <div id="statusCardDraft" class="status-radio-option" onclick="selectProductStatusRadio('draft')">
+                      <span class="status-dot" style="background: var(--amber);"></span>
+                      <div>
+                        <strong style="display: block; font-size: 0.82rem; color: var(--slate-900);">Draft</strong>
+                        <span style="font-size: 0.7rem; color: var(--slate-500);">Disembunyikan</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BAGIAN 2: HARGA & PENAWARAN -->
+            <div class="studio-section-card">
+              <div class="studio-section-header">
+                <span class="studio-step-num">2</span>
+                <h4>Pengaturan Harga & Diskon</h4>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="prodPrice">Harga Normal *</label>
+                  <div class="input-affix-wrap">
+                    <span class="input-prefix">Rp</span>
+                    <input type="number" id="prodPrice" min="0" step="1000" placeholder="350000" required oninput="updateProductModalLivePreview()" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="prodDiscountPrice">Harga Promo (Opsional)</label>
+                  <div class="input-affix-wrap">
+                    <span class="input-prefix">Rp</span>
+                    <input type="number" id="prodDiscountPrice" min="0" step="1000" placeholder="0 (tanpa diskon)" oninput="updateProductModalLivePreview()" />
+                  </div>
+                </div>
+
+                <div id="modalDiscountCalcRow" class="form-group full hidden">
+                  <div class="discount-calc-pill">
+                    <span id="modalDiscountSavingsText">Hemat Rp 0</span>
+                    <span id="modalDiscountPercentBadge">Diskon 0%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BAGIAN 3: MEDIA & LIVE DEMO -->
+            <div class="studio-section-card">
+              <div class="studio-section-header">
+                <span class="studio-step-num">3</span>
+                <h4>Tautan Live Demo & Gambar Pratinjau</h4>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group full">
+                  <label for="prodDemoUrl">URL Live Demo Website *</label>
+                  <div class="input-affix-wrap">
+                    <input type="url" id="prodDemoUrl" placeholder="https://contoh-demo-website.github.io" required oninput="updateProductModalLivePreview()" />
+                    <button type="button" class="input-suffix-btn" onclick="testProductDemoUrl()" title="Buka URL Demo di Tab Baru">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Uji Link
+                    </button>
+                  </div>
+                  <span class="form-hint">URL ini akan dimuat otomatis ke dalam panel Live Demo di bawah detail produk.</span>
+                </div>
+
+                <div class="form-group full">
+                  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                    <label style="margin-bottom: 0;">Gambar Thumbnail Produk *</label>
+                    <div class="thumb-mode-tabs" role="tablist">
+                      <button type="button" id="btnThumbModeUpload" class="thumb-mode-btn active" onclick="switchThumbSourceMode('upload')">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                          <polyline points="17 8 12 3 7 8"></polyline>
+                          <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        Upload Foto (PC / HP / Tablet)
+                      </button>
+                      <button type="button" id="btnThumbModeUrl" class="thumb-mode-btn" onclick="switchThumbSourceMode('url')">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                        Gunakan URL Gambar
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- PANEL 1: UPLOAD FOTO DARI PERANGKAT -->
+                  <div id="thumbUploadPane">
+                    <div id="prodThumbDropzone" class="thumb-upload-box">
+                      <input type="file" id="prodThumbFile" accept="image/*" onchange="handleProductThumbFileSelect(event)" />
+                      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4f46e5" stroke-width="2" style="margin: 0 auto 6px;">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                      </svg>
+                      <p style="font-weight: 700; color: var(--slate-800); font-size: 0.85rem;">Klik untuk memilih foto dari Galeri, Kamera HP, Tablet, atau PC</p>
+                      <span style="font-size: 0.74rem; color: var(--slate-500);">Mendukung JPG, PNG, WEBP (Otomatis dioptimalkan agar ringan & tajam)</span>
+                    </div>
+
+                    <div id="prodThumbFileStatus" class="thumb-file-status hidden">
+                      <span id="prodThumbFileLabel" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">foto-produk.jpg</span>
+                      <button type="button" class="btn btn-outline btn-sm" style="padding: 3px 9px; font-size: 0.74rem;" onclick="clearProductThumbFile()">Hapus Foto</button>
+                    </div>
+                  </div>
+
+                  <!-- PANEL 2: INPUT URL GAMBAR -->
+                  <div id="thumbUrlPane" class="hidden">
+                    <input type="url" id="prodThumbUrl" class="form-control" placeholder="https://images.unsplash.com/..." oninput="updateProductModalLivePreview()" />
+                  </div>
+
+                  <span class="form-hint">Rasio rekomendasi 16:9 (misalnya 1200x675 px). Hasil gambar langsung tampil di Live Preview sebelah kanan.</span>
+                </div>
+
+                <div class="form-group full">
+                  <label for="prodOrderUrl">URL Checkout Eksternal (Opsional)</label>
+                  <input type="url" id="prodOrderUrl" class="form-control" placeholder="Kosongkan untuk menggunakan halaman Checkout & Upload Bukti Bayar bawaan" />
+                </div>
+              </div>
+            </div>
+
+            <!-- BAGIAN 4: DESKRIPSI & FITUR -->
+            <div class="studio-section-card">
+              <div class="studio-section-header">
+                <span class="studio-step-num">4</span>
+                <h4>Deskripsi & Daftar Fitur Produk</h4>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group full">
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <label for="prodShortDesc">Ringkasan Singkat (Kartu Katalog) *</label>
+                    <span id="shortDescCharCount" style="font-size: 0.74rem; color: var(--slate-400); font-weight: 600;">0 / 160</span>
+                  </div>
+                  <input type="text" id="prodShortDesc" class="form-control" maxlength="160" placeholder="Jelaskan nilai jual utama produk dalam 1-2 kalimat singkat..." required oninput="updateProductModalLivePreview()" />
+                </div>
+
+                <div class="form-group full">
+                  <label for="prodFullDesc">Deskripsi Lengkap Produk *</label>
+                  <textarea id="prodFullDesc" class="form-control" rows="3" placeholder="Jelaskan kegunaan, teknologi yang dipakai, serta siapa target pengguna produk ini..." required></textarea>
+                </div>
+
+                <div class="form-group full">
+                  <label for="prodFeatures">Daftar Fitur Utama (1 fitur per baris) *</label>
+                  <textarea id="prodFeatures" class="form-control" rows="4" placeholder="Desain Responsif Mobile & Desktop&#10;Integrasi Google Sheets Otomatis&#10;Gratis Panduan Instalasi & Update" required></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KOLOM KANAN: LIVE PREVIEW KARTU KATALOG -->
+          <aside class="studio-preview-pane">
+            <div class="studio-preview-sticky">
+              <div class="preview-pane-label">
+                <span>Live Preview Kartu Toko</span>
+                <span id="modalPreviewStatusChip" class="badge badge-emerald">Aktif di Publik</span>
+              </div>
+
+              <article class="preview-card-mockup">
+                <div class="product-thumb-wrap">
+                  <img id="modalPreviewThumb" src="" alt="Preview Thumbnail" />
+                  <div class="thumb-badges">
+                    <span id="modalPreviewCategory" class="badge-glass">Kategori Produk</span>
+                    <span id="modalPreviewPromoBadge" class="badge-promo hidden">Promo</span>
+                  </div>
+                </div>
+
+                <div class="product-body">
+                  <h3 id="modalPreviewTitle" class="product-title">Nama Produk Digital Anda</h3>
+                  <p id="modalPreviewShortDesc" class="product-desc">Ringkasan singkat produk akan tampil secara otomatis di sini saat Anda mengetik.</p>
+
+                  <div class="product-meta-row">
+                    <div>
+                      <span class="price-label">Harga Lisensi</span>
+                      <div>
+                        <span id="modalPreviewOldPrice" class="price-old hidden">Rp 0</span>
+                        <span id="modalPreviewCurrentPrice" class="price-current">Gratis</span>
+                      </div>
+                    </div>
+
+                    <span class="demo-stat">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      </svg>
+                      Live Demo
+                    </span>
+                  </div>
+
+                  <div class="product-card-actions">
+                    <span class="btn btn-primary" style="pointer-events: none;">Detail & Live Demo</span>
+                    <span class="btn btn-outline" style="pointer-events: none;">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </article>
+
+              <div class="preview-tips-box">
+                <strong style="color: var(--slate-800); font-size: 0.82rem;">Panduan Cepat Pengisian:</strong>
+                <span>1. Pastikan <strong>URL Live Demo</strong> menggunakan protokol <code>https://</code> agar dapat dimuat di iframe.</span>
+                <span>2. Isi <strong>Harga Promo</strong> lebih kecil dari Harga Normal untuk menampilkan label promo hijau otomatis.</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="modal-footer">
+          <span style="font-size: 0.78rem; color: var(--slate-500);">Kolom bertanda (*) wajib diisi.</span>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <button type="button" class="btn btn-outline" onclick="closeModal('productModal')">Batal</button>
+            <button type="submit" class="btn btn-primary" id="btnSaveProduct">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Simpan Produk
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL PRATINJAU BUKTI PEMBAYARAN (ADMIN)
+       ========================================================= -->
+  <div id="proofViewerModal" class="modal-backdrop hidden" onclick="closeModalOnBackdrop(event, 'proofViewerModal')">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="proofViewerTitle">Bukti Pembayaran Pesanan</h3>
+        <button class="btn btn-ghost btn-sm" onclick="closeModal('proofViewerModal')" aria-label="Tutup">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <div id="proofViewerMeta" style="text-align: left; background: var(--slate-50); padding: 12px 14px; border-radius: 10px; margin-bottom: 14px; font-size: 0.86rem;"></div>
+        <img id="proofViewerImage" src="" alt="Bukti Transfer Pembeli" style="max-height: 440px; margin: 0 auto; border-radius: 10px; border: 1px solid var(--slate-200);" />
+        <p id="proofViewerFallbackNote" class="hidden" style="margin-top: 12px; font-size: 0.85rem; color: var(--slate-600);">
+          Pratinjau gambar langsung tidak tersedia untuk format file ini. Silakan buka tautan asli di bawah.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a id="proofViewerExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Buka File Asli</a>
+        <button type="button" class="btn btn-primary" onclick="closeModal('proofViewerModal')">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL KONFIRMASI HAPUS DATA
+       ========================================================= -->
+  <div id="confirmDeleteModal" class="modal-backdrop hidden" onclick="closeModalOnBackdrop(event, 'confirmDeleteModal')">
+    <div class="modal-box modal-sm">
+      <div class="modal-header">
+        <h3>Konfirmasi Hapus Data</h3>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.92rem; color: var(--slate-700);">
+          Apakah Anda yakin ingin menghapus <strong id="deleteTargetName">data ini</strong> secara permanen? Tindakan ini tidak dapat dibatalkan.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" onclick="closeModal('confirmDeleteModal')">Batal</button>
+        <button type="button" class="btn btn-danger" id="btnConfirmDeleteExecute">Ya, Hapus</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ==========================================
+    // KONFIGURASI APLIKASI
+    // ==========================================
+
+    // true = Mode Preview menggunakan data dummy
+    // false = Mode Production menggunakan GAS API
+    const IS_PREVIEW = true;
+
+    // URL Web App Google Apps Script
+    const GAS_URL = "URL_DEPLOY_GAS_ANDA";
+
+    // ==========================================
+    // DATA DUMMY UNTUK MODE PREVIEW
+    // ==========================================
+    const DUMMY_SETTINGS = {
+      store_name: "DigiStore Studio",
+      store_tagline: "Katalog Produk Digital & Live Demo",
+      hero_title: "Solusi Website & Aplikasi Digital Siap Pakai",
+      hero_subtitle: "Pilih produk digital berkualitas tinggi dan coba langsung tampilan serta fiturnya di layar Desktop, Tablet, maupun Smartphone sebelum melakukan pemesanan.",
+      payment_methods: "Bank BCA - 1234567890 a.n. DigiStore Studio\nBank Mandiri - 0987654321 a.n. DigiStore Studio\nE-Wallet DANA / GoPay / OVO - 081234567890 a.n. DigiStore Studio\nQRIS All Payment (Konfirmasi Admin)",
+      whatsapp_number: "6281234567890",
+      wa_template: "Halo Admin, saya sudah melakukan pembayaran untuk pesanan *{invoice_id}* ({product_name} - {price}) melalui *{payment_method}* atas nama *{customer_name}*. Mohon konfirmasinya."
+    };
+
+    const DUMMY_PRODUCTS_SEED = [
+      {
+        id: "PRD-1001",
+        title: "NovaCorp — Template Website Company Profile Modern",
+        category: "Company Profile",
+        price: 350000,
+        discount_price: 249000,
+        short_desc: "Website profil perusahaan elegan, cepat, SEO-ready, dan responsif untuk agensi maupun korporasi.",
+        full_desc: "NovaCorp dirancang khusus untuk perusahaan jasa, konsultan, maupun startup yang ingin tampil profesional di internet. Dilengkapi struktur halaman lengkap mulai dari layanan, portofolio proyek, testimoni klien, hingga formulir kontak cepat.",
+        features: "Desain Responsif Desktop, Tablet & Mobile\nStruktur SEO Semantik & Loading Cepat\nMudah Dikustomisasi Tanpa Framework Berat\nGratis Panduan Deployment GitHub Pages",
+        thumbnail_url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+        demo_url: "https://example.com",
+        order_url: "",
+        status: "active",
+        demo_views: 142,
+        created_at: "2026-10-15T08:00:00.000Z"
+      },
+      {
+        id: "PRD-1002",
+        title: "EduPortal — WebApp Sistem Informasi Sekolah & PPDB",
+        category: "Sistem Informasi",
+        price: 650000,
+        discount_price: 490000,
+        short_desc: "Aplikasi web sekolah terintegrasi dengan formulir pendaftaran siswa baru online dan pengumuman kelulusan.",
+        full_desc: "Sistem informasi sekolah berbasis WebApp yang ringan tanpa perlu biaya sewa VPS bulanan. Mendukung halaman profil sekolah, berita kegiatan, serta portal pendaftaran siswa baru secara daring.",
+        features: "Portal Informasi Sekolah Lengkap\nFormulir PPDB Online Responsif\nDashboard Admin Manajemen Data\nDokumentasi Penggunaan Lengkap",
+        thumbnail_url: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=900&q=80",
+        demo_url: "https://www.wikipedia.org",
+        order_url: "",
+        status: "active",
+        demo_views: 218,
+        created_at: "2026-10-22T10:30:00.000Z"
+      },
+      {
+        id: "PRD-1003",
+        title: "LaunchKit — Landing Page Produk SaaS & Aplikasi",
+        category: "Landing Page",
+        price: 275000,
+        discount_price: 0,
+        short_desc: "Landing page konversi tinggi untuk peluncuran produk digital, kursus online, maupun aplikasi mobile.",
+        full_desc: "Tingkatkan konversi penjualan produk digital Anda dengan tata letak landing page yang teruji. Dilengkapi bagian perbandingan paket harga, FAQ interaktif, dan tombol ajakan bertindak (CTA) yang menonjol.",
+        features: "Tabel Harga & Perbandingan Paket\nBagian FAQ Interaktif\nOptimasi Kecepatan Skor Tinggi\nSiap Pasang di Blogger, Sites & GitHub",
+        thumbnail_url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+        demo_url: "https://example.org",
+        order_url: "",
+        status: "active",
+        demo_views: 89,
+        created_at: "2026-11-01T14:15:00.000Z"
+      },
+      {
+        id: "PRD-1004",
+        title: "KlinikCare — Sistem Reservasi Antrean Klinik (Draft)",
+        category: "Web App & SaaS",
+        price: 750000,
+        discount_price: 599000,
+        short_desc: "Aplikasi pemesanan jadwal dokter dan nomor antrean pasien berbasis web.",
+        full_desc: "Memudahkan pasien mengambil nomor antrean dari rumah dan memantau jadwal praktik dokter secara real-time.",
+        features: "Booking Jadwal Dokter Online\nCetak Bukti Antrean Otomatis\nPanel Admin Rekap Kunjungan",
+        thumbnail_url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80",
+        demo_url: "https://example.com",
+        order_url: "",
+        status: "draft",
+        demo_views: 12,
+        created_at: "2026-11-05T09:00:00.000Z"
+      }
+    ];
+
+    const DUMMY_ORDERS_SEED = [
+      {
+        id: "ORD-20261110-01",
+        product_id: "PRD-1001",
+        product_title: "NovaCorp — Template Website Company Profile Modern",
+        amount: 249000,
+        customer_name: "Ahmad Fauzi",
+        customer_whatsapp: "6281298765432",
+        customer_email: "ahmad.fauzi@example.com",
+        payment_method: "Bank BCA - 1234567890 a.n. DigiStore Studio",
+        proof_url: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
+        status: "pending",
+        notes: "Transfer mobile banking BCA",
+        created_at: "2026-11-12T07:15:00.000Z"
+      }
+    ];
+
+    // ==========================================
+    // STATE GLOBAL APLIKASI
+    // ==========================================
+    const STORAGE_KEYS = {
+      TOKEN: "digistore_admin_token",
+      USERNAME: "digistore_admin_user",
+      PREVIEW_PRODUCTS: "digistore_preview_products_v1",
+      PREVIEW_SETTINGS: "digistore_preview_settings_v1",
+      PREVIEW_ORDERS: "digistore_preview_orders_v1",
+      PREVIEW_PASSWORD: "digistore_preview_admin_pass_v1"
+    };
+
+    let appState = {
+      products: [],
+      orders: [],
+      settings: { ...DUMMY_SETTINGS },
+      selectedCategory: "Semua",
+      currentProductId: null,
+      proofFilePayload: null,
+      productThumbPayload: null,
+      adminToken: localStorage.getItem(STORAGE_KEYS.TOKEN) || "",
+      adminUsername: localStorage.getItem(STORAGE_KEYS.USERNAME) || "",
+      workspace: "public",
+      adminTab: "dashboard"
+    };
+
+    // ==========================================
+    // INISIALISASI SAAT HALAMAN DIMUAT
+    // ==========================================
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("footerYear").textContent = new Date().getFullYear();
+
+      if (window.location.hostname.indexOf("blogspot.") !== -1) {
+        document.body.classList.add("blogger-mode");
+      }
+
+      if (IS_PREVIEW) {
+        document.getElementById("previewModeChip").classList.remove("hidden");
+        document.getElementById("previewLoginHint").classList.remove("hidden");
+        document.getElementById("adminEnvBadge").textContent = "Preview Mode";
+      } else {
+        document.getElementById("adminEnvBadge").textContent = "Production (GAS)";
+        document.getElementById("adminEnvBadge").className = "badge badge-emerald";
+      }
+
+      initApp();
+    });
+
+    async function initApp() {
+      setLoading(true, "Memuat katalog produk digital...");
+      try {
+        const res = await callApi("getPublicData", {}, "GET");
+        appState.products = res.data.products || [];
+        appState.settings = { ...DUMMY_SETTINGS, ...(res.data.settings || {}) };
+
+        applyStoreSettingsToUI();
+        renderCategoryPills();
+        renderPublicCatalog();
+
+        if (appState.adminToken) {
+          try {
+            const adminRes = await callApi("getAdminData", {}, "POST");
+            appState.products = adminRes.data.products || appState.products;
+            appState.orders = adminRes.data.orders || [];
+            appState.settings = { ...appState.settings, ...(adminRes.data.settings || {}) };
+            updateAdminAuthIndicators();
+          } catch (_) {
+            clearAdminSession();
+          }
+        }
+      } catch (err) {
+        showToast(err.message || "Gagal memuat data toko.", "error");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    // ==========================================
+    // LAYER KOMUNIKASI API (PREVIEW & PRODUCTION GAS)
+    // ==========================================
+    async function callApi(action, payload = {}, method = "POST") {
+      if (IS_PREVIEW) {
+        return handlePreviewApi(action, payload);
+      }
+
+      if (!GAS_URL || GAS_URL === "URL_DEPLOY_GAS_ANDA") {
+        throw new Error("GAS_URL belum dikonfigurasi. Silakan isi URL Web App Google Apps Script.");
+      }
+
+      let response;
+      if (method === "GET") {
+        const url = new URL(GAS_URL);
+        url.searchParams.set("action", action);
+        Object.keys(payload).forEach(k => url.searchParams.set(k, payload[k]));
+        response = await fetch(url.toString(), { method: "GET" });
+      } else {
+        const body = {
+          action,
+          token: appState.adminToken,
+          ...payload
+        };
+        response = await fetch(GAS_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(body)
+        });
+      }
+
+      const json = await response.json();
+      if (json.status !== "success") {
+        if (json.code === "UNAUTHORIZED") {
+          clearAdminSession();
+          switchWorkspace("public");
+        }
+        throw new Error(json.message || "Terjadi kesalahan pada server.");
+      }
+      return json;
+    }
+
+    function getPreviewStoreData() {
+      let products = JSON.parse(localStorage.getItem(STORAGE_KEYS.PREVIEW_PRODUCTS) || "null");
+      if (!products) {
+        products = [...DUMMY_PRODUCTS_SEED];
+        localStorage.setItem(STORAGE_KEYS.PREVIEW_PRODUCTS, JSON.stringify(products));
+      }
+
+      let settings = JSON.parse(localStorage.getItem(STORAGE_KEYS.PREVIEW_SETTINGS) || "null");
+      if (!settings) {
+        settings = { ...DUMMY_SETTINGS };
+        localStorage.setItem(STORAGE_KEYS.PREVIEW_SETTINGS, JSON.stringify(settings));
+      }
+
+      let orders = JSON.parse(localStorage.getItem(STORAGE_KEYS.PREVIEW_ORDERS) || "null");
+      if (!orders) {
+        orders = [...DUMMY_ORDERS_SEED];
+        localStorage.setItem(STORAGE_KEYS.PREVIEW_ORDERS, JSON.stringify(orders));
+      }
+
+      return { products, settings, orders };
+    }
+
+    async function handlePreviewApi(action, payload) {
+      await new Promise(r => setTimeout(r, 180));
+      const { products, settings, orders } = getPreviewStoreData();
+
+      switch (action) {
+        case "getPublicData":
+          return {
+            status: "success",
+            data: {
+              products: products.filter(p => p.status === "active"),
+              settings
+            }
+          };
+
+        case "trackDemoView": {
+          const idx = products.findIndex(p => p.id === payload.id);
+          if (idx !== -1) {
+            products[idx].demo_views = (Number(products[idx].demo_views) || 0) + 1;
+            localStorage.setItem(STORAGE_KEYS.PREVIEW_PRODUCTS, JSON.stringify(products));
+          }
+          return { status: "success" };
+        }
+
+        case "submitOrder": {
+          const ord = payload.order || {};
+          const newOrder = {
+            id: "ORD-" + Date.now(),
+            product_id: ord.product_id,
+            product_title: ord.product_title,
+            amount: Number(ord.amount) || 0,
+            customer_name: ord.customer_name,
+            customer_whatsapp: ord.customer_whatsapp,
+            customer_email: ord.customer_email,
+            payment_method: ord.payment_method,
+            proof_url: ord.proof_preview_data_url || "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
+            status: "pending",
+            notes: ord.notes || "",
+            created_at: new Date().toISOString()
+          };
+          orders.unshift(newOrder);
+          localStorage.setItem(STORAGE_KEYS.PREVIEW_ORDERS, JSON.stringify(orders));
+          return { status: "success", data: newOrder };
+        }
+
+        case "login": {
+          const savedPass = localStorage.getItem(STORAGE_KEYS.PREVIEW_PASSWORD) || "123456";
+          if (payload.username === "admin" && payload.password === savedPass) {
+            return {
+              status: "success",
+              data: {
+                token: "PREVIEW-TOKEN-ADMIN-2026",
+                username: "admin",
+                role: "Admin"
+              }
+            };
+          }
+          throw new Error("Username atau password preview tidak valid (Gunakan: admin / 123456).");
+        }
+
+        case "logout":
+          return { status: "success" };
+
+        case "getAdminData": {
+          if (appState.adminToken !== "PREVIEW-TOKEN-ADMIN-2026") {
+            throw new Error("Sesi tidak valid.");
+          }
+          return {
+            status: "success",
+            data: { products, orders, settings }
+          };
+        }
+
+        case "createProduct": {
+          if (appState.adminToken !== "PREVIEW-TOKEN-ADMIN-2026") throw new Error("Akses ditolak.");
+          const { thumb_file, ...cleanProd } = payload.product;
+          const resolvedThumb = (thumb_file && thumb_file.dataUrl) ? thumb_file.dataUrl : cleanProd.thumbnail_url;
+          const newItem = {
+            ...cleanProd,
+            thumbnail_url: resolvedThumb,
+            id: "PRD-" + Date.now(),
+            demo_views: 0,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
+          };
+          products.unshift(newItem);
+          localStorage.setItem(STORAGE_KEYS.PREVIEW_PRODUCTS, JSON.stringify(products));
+          return { status: "success", message: "Produk berhasil ditambahkan.", data: newItem };
+        }
+
+        case "updateProduct": {
+          if (appState.adminToken !== "PREVIEW-TOKEN-ADMIN-2026") throw new Error("Akses ditolak.");
+          const idx = products.findIndex(p => p.id === payload.product.id);
+          if (idx === -1) throw new Error("Produk tidak ditemukan.");
+          const { thumb_file, ...cleanProd } = payload.product;
+          const resolvedThumb = (thumb_file && thumb_file.dataUrl) ? thumb_file.dataUrl : cleanProd.thumbnail_url;
+          products[idx] = {
+            ...products[idx],
+            ...cleanProd,
+            thumbnail_url: resolvedThumb,
+            updated_at: new Date().toISOString()
+          };
+          localStorage.setItem(STORAGE_KEYS.PREVIEW_PRODUCTS, JSON.stringify(products));
+          return { status: "success", message: "Perubahan produk berhasil disimpan.", data: products[idx] };
+        }
+
+        case "deleteProduct": {
+          if (appState.adminToken !== "PREVIEW-TOKEN-ADMIN-2026") throw new Error("Akses ditolak.");
+          const next = products.filter(p => p.id !== payload.id);
+          localStorage.setItem(STORAGE_KEYS.PREVIEW_PRODUCTS, JSON.stringify(next));
+          return { status: "success", message: "Produk dihapus." };
+        }
+
+        case "updateOrderStatus": {
+          if (appState.adminToken !== "PREVIEW-TOKEN-ADMIN-2026") throw new Error("Akses ditolak.");
+          const idx = orders.findIndex(o => o.id === payload.id);
+          if (idx === -1) throw new Error("Pesanan tidak ditemukan.");
+          orders[idx].status = payload.status;
+          orders[idx].updated_at = new Date().toISOString();
+          localStorage.setItem(STORAGE_KEYS.PREVIEW_ORDERS, JSON.stringify(orders));
+          return { status: "success", data: orders[idx] };
+        }
+
+        case "deleteOrder": {
+          if (appState.adminToken !== "PREVIEW-TOKEN-ADMIN-2026") throw new Error("Akses ditolak.");
+          const next = orders.filter(o => o.id !== payload.id);
+          localStorage.setItem(STORAGE_KEYS.PREVIEW_ORDERS, JSON.stringify(next));
+          return { status: "success" };
+        }
+
+        case "updateSettings": {
+          if (appState.adminToken !== "PREVIEW-TOKEN-ADMIN-2026") throw new Error("Akses ditolak.");
+          const nextSettings = { ...settings, ...payload.settings };
+          localStorage.setItem(STORAGE_KEYS.PREVIEW_SETTINGS, JSON.stringify(nextSettings));
+          return { status: "success", data: nextSettings };
+        }
+
+        case "changePassword": {
+          if (appState.adminToken !== "PREVIEW-TOKEN-ADMIN-2026") throw new Error("Akses ditolak.");
+          const current = localStorage.getItem(STORAGE_KEYS.PREVIEW_PASSWORD) || "123456";
+          if (payload.oldPassword !== current) throw new Error("Password saat ini tidak sesuai.");
+          localStorage.setItem(STORAGE_KEYS.PREVIEW_PASSWORD, payload.newPassword);
+          return { status: "success" };
+        }
+
+        default:
+          throw new Error("Aksi preview tidak dikenal: " + action);
+      }
+    }
+
+    // ==========================================
+    // HELPER UMUM & FORMATTER
+    // ==========================================
+    function formatRupiah(num) {
+      const n = Number(num) || 0;
+      if (n <= 0) return "Gratis";
+      return "Rp " + n.toLocaleString("id-ID");
+    }
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function getFallbackThumbSvg(title) {
+      const cleanTitle = encodeURIComponent((title || "Produk Digital").slice(0, 28));
+      return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%23eef2ff"/><text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="%234f46e5">${cleanTitle}</text></svg>`;
+    }
+
+    function setLoading(isLoading, text = "Memproses...") {
+      const overlay = document.getElementById("loadingOverlay");
+      document.getElementById("loadingText").textContent = text;
+      overlay.classList.toggle("hidden", !isLoading);
+    }
+
+    function showToast(message, type = "info") {
+      const container = document.getElementById("toastContainer");
+      const toast = document.createElement("div");
+      toast.className = `toast ${type}`;
+      toast.textContent = message;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateX(20px)";
+        setTimeout(() => toast.remove(), 250);
+      }, 3400);
+    }
+
+    function applyStoreSettingsToUI() {
+      const s = appState.settings;
+      document.title = `${s.store_name} — ${s.store_tagline}`;
+      document.getElementById("navStoreName").textContent = s.store_name;
+      document.getElementById("navStoreTagline").textContent = s.store_tagline;
+      document.getElementById("heroTitle").textContent = s.hero_title;
+      document.getElementById("heroSubtitle").textContent = s.hero_subtitle;
+      document.getElementById("footerStoreName").textContent = s.store_name;
+    }
+
+    // ==========================================
+    // WAJAH 1: KATALOG PUBLIK & LIVE DEMO SANDBOX
+    // ==========================================
+    function getPublicProducts() {
+      return appState.products.filter(p => p.status === "active");
+    }
+
+    function renderCategoryPills() {
+      const publicProducts = getPublicProducts();
+      const categories = ["Semua", ...new Set(publicProducts.map(p => p.category).filter(Boolean))];
+      if (!categories.includes(appState.selectedCategory)) {
+        appState.selectedCategory = "Semua";
+      }
+
+      const container = document.getElementById("categoryPills");
+      container.innerHTML = categories.map(cat => `
+        <button type="button" class="cat-pill ${appState.selectedCategory === cat ? "active" : ""}" onclick="selectCategory('${escapeHtml(cat)}')">
+          ${escapeHtml(cat)}
+        </button>
+      `).join("");
+    }
+
+    function selectCategory(category) {
+      appState.selectedCategory = category;
+      renderCategoryPills();
+      renderPublicCatalog();
+    }
+
+    function renderPublicCatalog() {
+      const query = document.getElementById("publicSearchInput").value.trim().toLowerCase();
+      const sortBy = document.getElementById("publicSortSelect").value;
+      let items = getPublicProducts();
+
+      if (appState.selectedCategory !== "Semua") {
+        items = items.filter(p => p.category === appState.selectedCategory);
+      }
+
+      if (query) {
+        items = items.filter(p =>
+          p.title.toLowerCase().includes(query) ||
+          p.short_desc.toLowerCase().includes(query) ||
+          p.category.toLowerCase().includes(query)
+        );
+      }
+
+      if (sortBy === "popular") {
+        items.sort((a, b) => (Number(b.demo_views) || 0) - (Number(a.demo_views) || 0));
+      } else if (sortBy === "price_asc") {
+        items.sort((a, b) => getEffectivePrice(a) - getEffectivePrice(b));
+      } else if (sortBy === "price_desc") {
+        items.sort((a, b) => getEffectivePrice(b) - getEffectivePrice(a));
+      }
+
+      const grid = document.getElementById("publicProductGrid");
+      if (items.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state" style="grid-column: 1 / -1;">
+            <h3 style="color: var(--slate-800); margin-bottom: 6px;">Produk Tidak Ditemukan</h3>
+            <p>Coba gunakan kata kunci pencarian lain atau pilih kategori "Semua".</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = items.map(prod => {
+        const hasDiscount = Number(prod.discount_price) > 0 && Number(prod.discount_price) < Number(prod.price);
+        const finalPrice = getEffectivePrice(prod);
+        const fallback = getFallbackThumbSvg(prod.title);
+
+        return `
+          <article class="product-card">
+            <div class="product-thumb-wrap">
+              <img src="${escapeHtml(prod.thumbnail_url || fallback)}" alt="${escapeHtml(prod.title)}" onerror="this.src='${fallback}'" />
+              <div class="thumb-badges">
+                <span class="badge-glass">${escapeHtml(prod.category)}</span>
+                ${hasDiscount ? `<span class="badge-promo">Promo</span>` : ""}
+              </div>
+            </div>
+
+            <div class="product-body">
+              <h3 class="product-title">${escapeHtml(prod.title)}</h3>
+              <p class="product-desc">${escapeHtml(prod.short_desc)}</p>
+
+              <div class="product-meta-row">
+                <div>
+                  <span class="price-label">Harga Lisensi</span>
+                  <div>
+                    ${hasDiscount ? `<span class="price-old">${formatRupiah(prod.price)}</span>` : ""}
+                    <span class="price-current">${formatRupiah(finalPrice)}</span>
+                  </div>
+                </div>
+
+                <span class="demo-stat">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  ${Number(prod.demo_views) || 0}x Demo
+                </span>
+              </div>
+
+              <div class="product-card-actions">
+                <button type="button" class="btn btn-primary" onclick="openProductDetail('${escapeHtml(prod.id)}')">
+                  Detail & Live Demo
+                </button>
+                <a href="${escapeHtml(prod.demo_url)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" title="Buka Live Demo di Tab Baru">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function getEffectivePrice(prod) {
+      const price = Number(prod.price) || 0;
+      const disc = Number(prod.discount_price) || 0;
+      return (disc > 0 && disc < price) ? disc : price;
+    }
+
+    function navigateToCatalog(event) {
+      if (event) event.preventDefault();
+      appState.currentProductId = null;
+      document.getElementById("liveDemoIframe").src = "about:blank";
+      document.getElementById("publicDetailSection").classList.add("hidden");
+      document.getElementById("publicCheckoutSection").classList.add("hidden");
+      document.getElementById("publicCatalogSection").classList.remove("hidden");
+      renderCategoryPills();
+      renderPublicCatalog();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function openProductDetail(productId) {
+      const prod = appState.products.find(p => p.id === productId);
+      if (!prod) return;
+
+      appState.currentProductId = prod.id;
+      const hasDiscount = Number(prod.discount_price) > 0 && Number(prod.discount_price) < Number(prod.price);
+      const finalPrice = getEffectivePrice(prod);
+      const fallback = getFallbackThumbSvg(prod.title);
+
+      document.getElementById("detailCategoryBadge").textContent = prod.category;
+      document.getElementById("detailTitle").textContent = prod.title;
+      document.getElementById("detailThumbImg").src = prod.thumbnail_url || fallback;
+      document.getElementById("detailThumbImg").onerror = function () { this.src = fallback; };
+      document.getElementById("detailCurrentPrice").textContent = formatRupiah(finalPrice);
+
+      const oldPriceEl = document.getElementById("detailOldPrice");
+      const discountTagEl = document.getElementById("detailDiscountTag");
+      if (hasDiscount) {
+        oldPriceEl.textContent = formatRupiah(prod.price);
+        oldPriceEl.classList.remove("hidden");
+        discountTagEl.classList.remove("hidden");
+      } else {
+        oldPriceEl.classList.add("hidden");
+        discountTagEl.classList.add("hidden");
+      }
+
+      document.getElementById("detailFullDesc").textContent = prod.full_desc;
+
+      const features = String(prod.features || "").split("\n").map(f => f.trim()).filter(Boolean);
+      document.getElementById("detailFeatureList").innerHTML = features.map(f => `
+        <li>
+          <svg class="feature-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>${escapeHtml(f)}</span>
+        </li>
+      `).join("");
+
+      const nextViews = (Number(prod.demo_views) || 0) + 1;
+      prod.demo_views = nextViews;
+      document.getElementById("detailDemoCounterBadge").textContent = `${nextViews}x Live Demo Dicoba`;
+
+      // Setup Live Demo Sandbox di bawah detail produk
+      document.getElementById("demoBarProductTitle").textContent = prod.title;
+      document.getElementById("demoExternalLink").href = prod.demo_url;
+      setDemoViewport("desktop");
+      document.getElementById("liveDemoIframe").src = prod.demo_url;
+
+      document.getElementById("publicCatalogSection").classList.add("hidden");
+      document.getElementById("publicCheckoutSection").classList.add("hidden");
+      document.getElementById("publicDetailSection").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      callApi("trackDemoView", { id: prod.id }, "POST").catch(() => {});
+    }
+
+    function setDemoViewport(vp) {
+      const container = document.getElementById("demoIframeContainer");
+      const canvas = document.getElementById("demoCanvas");
+      container.classList.remove("vp-desktop", "vp-tablet", "vp-mobile");
+      container.classList.add(`vp-${vp}`);
+      canvas.classList.toggle("mode-desktop", vp === "desktop");
+
+      document.querySelectorAll(".vp-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.vp === vp);
+      });
+    }
+
+    function reloadDemoIframe() {
+      const iframe = document.getElementById("liveDemoIframe");
+      const currentSrc = iframe.src;
+      iframe.src = "about:blank";
+      setTimeout(() => { iframe.src = currentSrc; }, 100);
+    }
+
+    // ==========================================
+    // HALAMAN CHECKOUT, UPLOAD BUKTI BAYAR & KONFIRMASI
+    // ==========================================
+    function openCheckoutPage() {
+      const prod = appState.products.find(p => p.id === appState.currentProductId);
+      if (!prod) return;
+
+      if (prod.order_url && prod.order_url.trim() !== "") {
+        window.open(prod.order_url.trim(), "_blank", "noopener,noreferrer");
+        return;
+      }
+
+      document.getElementById("checkoutForm").reset();
+      clearProofFile();
+
+      const hasDiscount = Number(prod.discount_price) > 0 && Number(prod.discount_price) < Number(prod.price);
+      const finalPrice = getEffectivePrice(prod);
+      const fallback = getFallbackThumbSvg(prod.title);
+
+      document.getElementById("chkSummaryThumb").src = prod.thumbnail_url || fallback;
+      document.getElementById("chkSummaryThumb").onerror = function () { this.src = fallback; };
+      document.getElementById("chkSummaryCategory").textContent = prod.category;
+      document.getElementById("chkSummaryTitle").textContent = prod.title;
+      document.getElementById("chkSummaryNormalPrice").textContent = formatRupiah(prod.price);
+
+      const discRow = document.getElementById("chkSummaryDiscountRow");
+      if (hasDiscount) {
+        document.getElementById("chkSummaryDiscountVal").textContent = `- ${formatRupiah(Number(prod.price) - finalPrice)}`;
+        discRow.classList.remove("hidden");
+      } else {
+        discRow.classList.add("hidden");
+      }
+      document.getElementById("chkSummaryTotalPrice").textContent = formatRupiah(finalPrice);
+
+      // Isi metode pembayaran dari pengaturan toko
+      const methods = String(appState.settings.payment_methods || DUMMY_SETTINGS.payment_methods)
+        .split("\n")
+        .map(m => m.trim())
+        .filter(Boolean);
+
+      const selectEl = document.getElementById("chkPaymentMethod");
+      selectEl.innerHTML = methods.map(m => `<option value="${escapeHtml(m)}">${escapeHtml(m)}</option>`).join("");
+      onPaymentMethodChange();
+
+      document.getElementById("checkoutSuccessWrapper").classList.add("hidden");
+      document.getElementById("checkoutFormWrapper").classList.remove("hidden");
+      document.getElementById("publicDetailSection").classList.add("hidden");
+      document.getElementById("publicCheckoutSection").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function backToProductDetail() {
+      document.getElementById("publicCheckoutSection").classList.add("hidden");
+      document.getElementById("publicDetailSection").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function onPaymentMethodChange() {
+      const val = document.getElementById("chkPaymentMethod").value;
+      document.getElementById("paymentInstructionText").textContent = val || "-";
+    }
+
+    function copyPaymentTarget() {
+      const text = document.getElementById("paymentInstructionText").textContent;
+      if (!text || text === "-") return;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast("Informasi pembayaran berhasil disalin.", "success");
+      }).catch(() => {
+        showToast("Gagal menyalin teks.", "error");
+      });
+    }
+
+    function handleProofFileSelect(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      if (file.size > 4 * 1024 * 1024) {
+        showToast("Ukuran file bukti pembayaran maksimal 4 MB.", "error");
+        clearProofFile();
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const dataUrl = e.target.result;
+        const base64 = dataUrl.split(",")[1];
+        appState.proofFilePayload = {
+          fileName: file.name,
+          mimeType: file.type || "application/octet-stream",
+          base64,
+          dataUrl
+        };
+
+        document.getElementById("uploadDropzone").classList.add("has-file");
+        document.getElementById("proofFileName").textContent = file.name;
+        document.getElementById("proofFileSize").textContent = `${(file.size / 1024).toFixed(1)} KB`;
+
+        const previewImg = document.getElementById("proofPreviewImg");
+        if (file.type && file.type.startsWith("image/")) {
+          previewImg.src = dataUrl;
+        } else {
+          previewImg.src = getFallbackThumbSvg("FILE PDF");
+        }
+        document.getElementById("proofPreviewBox").classList.remove("hidden");
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function clearProofFile() {
+      appState.proofFilePayload = null;
+      const input = document.getElementById("chkProofFile");
+      if (input) input.value = "";
+      document.getElementById("uploadDropzone").classList.remove("has-file");
+      document.getElementById("proofPreviewBox").classList.add("hidden");
+    }
+
+    async function handleCheckoutSubmit(event) {
+      event.preventDefault();
+      const prod = appState.products.find(p => p.id === appState.currentProductId);
+      if (!prod) return;
+
+      if (!appState.proofFilePayload) {
+        showToast("Silakan upload file bukti pembayaran terlebih dahulu.", "error");
+        return;
+      }
+
+      const customerName = document.getElementById("chkFullName").value.trim();
+      const customerWhatsapp = document.getElementById("chkWhatsapp").value.trim();
+      const customerEmail = document.getElementById("chkEmail").value.trim();
+      const paymentMethod = document.getElementById("chkPaymentMethod").value;
+      const notes = document.getElementById("chkNotes").value.trim();
+      const finalPrice = getEffectivePrice(prod);
+
+      const orderPayload = {
+        product_id: prod.id,
+        product_title: prod.title,
+        amount: finalPrice,
+        customer_name: customerName,
+        customer_whatsapp: customerWhatsapp,
+        customer_email: customerEmail,
+        payment_method: paymentMethod,
+        notes,
+        proof_filename: appState.proofFilePayload.fileName,
+        proof_mime_type: appState.proofFilePayload.mimeType,
+        proof_base64: appState.proofFilePayload.base64,
+        proof_preview_data_url: IS_PREVIEW ? appState.proofFilePayload.dataUrl : ""
+      };
+
+      setLoading(true, "Mengunggah bukti bayar & mengirim konfirmasi...");
+      try {
+        const res = await callApi("submitOrder", { order: orderPayload }, "POST");
+        const createdOrder = res.data;
+
+        if (appState.adminToken) {
+          appState.orders.unshift(createdOrder);
+        }
+
+        // Tampilkan halaman struk konfirmasi
+        document.getElementById("recOrderId").textContent = createdOrder.id;
+        document.getElementById("recProductTitle").textContent = createdOrder.product_title;
+        document.getElementById("recCustomerName").textContent = createdOrder.customer_name;
+        document.getElementById("recContact").textContent = `${createdOrder.customer_whatsapp} / ${createdOrder.customer_email}`;
+        document.getElementById("recPaymentMethod").textContent = createdOrder.payment_method;
+        document.getElementById("recAmount").textContent = formatRupiah(createdOrder.amount);
+
+        const waNumber = String(appState.settings.whatsapp_number || "6281234567890").replace(/\D/g, "");
+        const template = appState.settings.wa_template || DUMMY_SETTINGS.wa_template;
+        const message = template
+          .replace(/\{invoice_id\}/g, createdOrder.id)
+          .replace(/\{product_name\}/g, createdOrder.product_title)
+          .replace(/\{price\}/g, formatRupiah(createdOrder.amount))
+          .replace(/\{customer_name\}/g, createdOrder.customer_name)
+          .replace(/\{payment_method\}/g, createdOrder.payment_method);
+
+        document.getElementById("recWhatsappConfirmBtn").href = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+
+        document.getElementById("checkoutFormWrapper").classList.add("hidden");
+        document.getElementById("checkoutSuccessWrapper").classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        showToast("Bukti pembayaran & konfirmasi pesanan berhasil dikirim!", "success");
+      } catch (err) {
+        showToast(err.message || "Gagal mengirim konfirmasi pembayaran.", "error");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    // ==========================================
+    // AUTENTIKASI & NAVIGASI WORKSPACE ADMIN
+    // ==========================================
+    function handleAdminAccessClick() {
+      if (appState.adminToken) {
+        switchWorkspace("admin");
+      } else {
+        document.getElementById("adminLoginForm").reset();
+        openModal("loginModal");
+      }
+    }
+
+    function updateAdminAuthIndicators() {
+      const isLoggedIn = Boolean(appState.adminToken);
+      document.getElementById("btnGoAdminTop").classList.toggle("hidden", !isLoggedIn);
+      document.getElementById("adminUserLabel").textContent = appState.adminUsername || "Admin";
+    }
+
+    function clearAdminSession() {
+      appState.adminToken = "";
+      appState.adminUsername = "";
+      localStorage.removeItem(STORAGE_KEYS.TOKEN);
+      localStorage.removeItem(STORAGE_KEYS.USERNAME);
+      updateAdminAuthIndicators();
+    }
+
+    async function handleAdminLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById("loginUsername").value.trim();
+      const password = document.getElementById("loginPassword").value;
+
+      setLoading(true, "Memverifikasi kredensial admin...");
+      try {
+        const res = await callApi("login", { username, password }, "POST");
+        appState.adminToken = res.data.token;
+        appState.adminUsername = res.data.username;
+        localStorage.setItem(STORAGE_KEYS.TOKEN, res.data.token);
+        localStorage.setItem(STORAGE_KEYS.USERNAME, res.data.username);
+
+        const adminData = await callApi("getAdminData", {}, "POST");
+        appState.products = adminData.data.products || [];
+        appState.orders = adminData.data.orders || [];
+        appState.settings = { ...appState.settings, ...(adminData.data.settings || {}) };
+
+        updateAdminAuthIndicators();
+        closeModal("loginModal");
+        switchWorkspace("admin");
+        showToast("Selamat datang kembali di Dashboard Admin!", "success");
+      } catch (err) {
+        showToast(err.message || "Login gagal.", "error");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    async function logoutAdmin() {
+      setLoading(true, "Mengakhiri sesi admin...");
+      try {
+        await callApi("logout", {}, "POST").catch(() => {});
+      } finally {
+        clearAdminSession();
+        switchWorkspace("public");
+        setLoading(false);
+        showToast("Anda telah keluar dari sesi Admin.", "info");
+      }
+    }
+
+    function switchWorkspace(target) {
+      if (target === "admin" && !appState.adminToken) {
+        openModal("loginModal");
+        return;
+      }
+
+      appState.workspace = target;
+      const isAdmin = target === "admin";
+      document.getElementById("publicView").classList.toggle("hidden", isAdmin);
+      document.getElementById("adminView").classList.toggle("hidden", !isAdmin);
+
+      if (isAdmin) {
+        renderAdminWorkspace();
+      } else {
+        navigateToCatalog();
+      }
+    }
+
+    function toggleAdminSidebar() {
+      document.getElementById("adminSidebar").classList.toggle("open");
+    }
+
+    function switchAdminTab(tabName) {
+      appState.adminTab = tabName;
+      document.querySelectorAll(".admin-nav-item[data-tab]").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.tab === tabName);
+      });
+
+      document.getElementById("adminTabDashboard").classList.toggle("hidden", tabName !== "dashboard");
+      document.getElementById("adminTabProducts").classList.toggle("hidden", tabName !== "products");
+      document.getElementById("adminTabOrders").classList.toggle("hidden", tabName !== "orders");
+      document.getElementById("adminTabSettings").classList.toggle("hidden", tabName !== "settings");
+
+      const titles = {
+        dashboard: "Dashboard Ringkasan",
+        products: "Kelola Produk Digital (CRUD)",
+        orders: "Pesanan & Konfirmasi Pembayaran",
+        settings: "Pengaturan Toko & Akun Admin"
+      };
+      document.getElementById("adminPageTitle").textContent = titles[tabName] || "Dashboard Admin";
+
+      if (tabName === "settings") {
+        populateSettingsForm();
+      }
+      document.getElementById("adminSidebar").classList.remove("open");
+    }
+
+    // ==========================================
+    // RENDER DASHBOARD, PRODUK & PESANAN ADMIN
+    // ==========================================
+    function renderAdminWorkspace() {
+      const products = appState.products;
+      const orders = appState.orders;
+
+      const activeCount = products.filter(p => p.status === "active").length;
+      const pendingOrdersCount = orders.filter(o => o.status === "pending").length;
+      const totalDemoViews = products.reduce((sum, p) => sum + (Number(p.demo_views) || 0), 0);
+
+      document.getElementById("kpiTotalProducts").textContent = products.length;
+      document.getElementById("kpiActiveProducts").textContent = activeCount;
+      document.getElementById("kpiTotalOrders").textContent = pendingOrdersCount;
+      document.getElementById("kpiTotalDemoViews").textContent = totalDemoViews;
+
+      const orderBadge = document.getElementById("sidebarPendingOrderBadge");
+      if (pendingOrdersCount > 0) {
+        orderBadge.textContent = pendingOrdersCount;
+        orderBadge.classList.remove("hidden");
+      } else {
+        orderBadge.classList.add("hidden");
+      }
+
+      // Top Demo Table di Dashboard
+      const topProducts = [...products]
+        .sort((a, b) => (Number(b.demo_views) || 0) - (Number(a.demo_views) || 0))
+        .slice(0, 5);
+
+      const topTable = document.getElementById("dashboardTopDemoTable");
+      if (topProducts.length === 0) {
+        topTable.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--slate-500);">Belum ada produk digital.</td></tr>`;
+      } else {
+        topTable.innerHTML = topProducts.map(p => {
+          const fallback = getFallbackThumbSvg(p.title);
+          return `
+            <tr>
+              <td>
+                <div class="tbl-product-cell">
+                  <img class="tbl-thumb" src="${escapeHtml(p.thumbnail_url || fallback)}" alt="" onerror="this.src='${fallback}'" />
+                  <strong>${escapeHtml(p.title)}</strong>
+                </div>
+              </td>
+              <td>${escapeHtml(p.category)}</td>
+              <td>${formatRupiah(getEffectivePrice(p))}</td>
+              <td>
+                <span class="badge ${p.status === "active" ? "badge-emerald" : "badge-amber"}">
+                  ${p.status === "active" ? "Aktif" : "Draft"}
+                </span>
+              </td>
+              <td><strong>${Number(p.demo_views) || 0}x</strong></td>
+            </tr>
+          `;
+        }).join("");
+      }
+
+      renderAdminProductsTable();
+      renderAdminOrdersTable();
+    }
+
+    function renderAdminProductsTable() {
+      const search = document.getElementById("adminSearchInput").value.trim().toLowerCase();
+      const statusFilter = document.getElementById("adminStatusFilter").value;
+
+      let filtered = [...appState.products];
+      if (statusFilter !== "all") {
+        filtered = filtered.filter(p => p.status === statusFilter);
+      }
+      if (search) {
+        filtered = filtered.filter(p =>
+          p.title.toLowerCase().includes(search) ||
+          p.category.toLowerCase().includes(search)
+        );
+      }
+
+      const tbody = document.getElementById("adminProductsTableBody");
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 32px; color: var(--slate-500);">Tidak ada data produk yang cocok.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(p => {
+        const fallback = getFallbackThumbSvg(p.title);
+        const finalPrice = getEffectivePrice(p);
+        return `
+          <tr>
+            <td>
+              <div class="tbl-product-cell">
+                <img class="tbl-thumb" src="${escapeHtml(p.thumbnail_url || fallback)}" alt="" onerror="this.src='${fallback}'" />
+                <div>
+                  <strong style="display: block; color: var(--slate-900);">${escapeHtml(p.title)}</strong>
+                  <span style="font-size: 0.75rem; color: var(--slate-400);">${escapeHtml(p.id)}</span>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge badge-primary">${escapeHtml(p.category)}</span></td>
+            <td><strong>${formatRupiah(finalPrice)}</strong></td>
+            <td>
+              <a href="${escapeHtml(p.demo_url)}" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: none;">
+                Buka Demo
+              </a>
+            </td>
+            <td>
+              <span class="badge ${p.status === "active" ? "badge-emerald" : "badge-amber"}">
+                ${p.status === "active" ? "Aktif" : "Draft"}
+              </span>
+            </td>
+            <td>${Number(p.demo_views) || 0}x</td>
+            <td>
+              <div class="tbl-actions">
+                <button type="button" class="btn btn-outline btn-sm" onclick="openProductModal('${escapeHtml(p.id)}')">Edit</button>
+                <button type="button" class="btn btn-ghost btn-sm" onclick="quickToggleProductStatus('${escapeHtml(p.id)}')">
+                  ${p.status === "active" ? "Draftkan" : "Aktifkan"}
+                </button>
+                <button type="button" class="btn btn-danger btn-sm" onclick="promptDeleteProduct('${escapeHtml(p.id)}')">Hapus</button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function renderAdminOrdersTable() {
+      const search = document.getElementById("adminOrderSearchInput").value.trim().toLowerCase();
+      const statusFilter = document.getElementById("adminOrderStatusFilter").value;
+
+      let filtered = [...appState.orders];
+      if (statusFilter !== "all") {
+        filtered = filtered.filter(o => o.status === statusFilter);
+      }
+      if (search) {
+        filtered = filtered.filter(o =>
+          o.id.toLowerCase().includes(search) ||
+          o.customer_name.toLowerCase().includes(search) ||
+          o.customer_email.toLowerCase().includes(search) ||
+          o.product_title.toLowerCase().includes(search)
+        );
+      }
+
+      const tbody = document.getElementById("adminOrdersTableBody");
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 32px; color: var(--slate-500);">Belum ada data pesanan masuk.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(o => {
+        const statusBadgeMap = {
+          pending: `<span class="badge badge-amber">Menunggu Verifikasi</span>`,
+          confirmed: `<span class="badge badge-emerald">Lunas & Terkirim</span>`,
+          rejected: `<span class="badge badge-danger">Ditolak</span>`
+        };
+        const formattedDate = o.created_at ? new Date(o.created_at).toLocaleString("id-ID") : "-";
+
+        return `
+          <tr>
+            <td>
+              <strong style="color: var(--primary); display: block;">${escapeHtml(o.id)}</strong>
+              <span style="font-size: 0.75rem; color: var(--slate-400);">${escapeHtml(formattedDate)}</span>
+            </td>
+            <td>
+              <strong style="display: block; color: var(--slate-900);">${escapeHtml(o.customer_name)}</strong>
+              <span style="font-size: 0.8rem; color: var(--slate-600); display: block;">WA: ${escapeHtml(o.customer_whatsapp)}</span>
+              <span style="font-size: 0.78rem; color: var(--slate-500);">${escapeHtml(o.customer_email)}</span>
+            </td>
+            <td>
+              <span style="display: block; font-weight: 600; color: var(--slate-800); max-width: 220px;">${escapeHtml(o.product_title)}</span>
+              <strong style="color: var(--emerald-hover);">${formatRupiah(o.amount)}</strong>
+            </td>
+            <td style="max-width: 190px; font-size: 0.82rem;">${escapeHtml(o.payment_method)}</td>
+            <td>
+              <button type="button" class="btn btn-outline btn-sm" onclick="viewOrderProof('${escapeHtml(o.id)}')">
+                Lihat Bukti
+              </button>
+            </td>
+            <td>${statusBadgeMap[o.status] || statusBadgeMap.pending}</td>
+            <td>
+              <div class="tbl-actions">
+                ${o.status !== "confirmed" ? `<button type="button" class="btn btn-emerald btn-sm" onclick="changeOrderStatus('${escapeHtml(o.id)}', 'confirmed')">Verifikasi Lunas</button>` : ""}
+                ${o.status !== "rejected" ? `<button type="button" class="btn btn-outline btn-sm" onclick="changeOrderStatus('${escapeHtml(o.id)}', 'rejected')">Tolak</button>` : ""}
+                <button type="button" class="btn btn-danger btn-sm" onclick="promptDeleteOrder('${escapeHtml(o.id)}')">Hapus</button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function viewOrderProof(orderId) {
+      const order = appState.orders.find(o => o.id === orderId);
+      if (!order) return;
+
+      document.getElementById("proofViewerTitle").textContent = `Bukti Pembayaran — ${order.id}`;
+      document.getElementById("proofViewerMeta").innerHTML = `
+        <strong>Pembeli:</strong> ${escapeHtml(order.customer_name)} (${escapeHtml(order.customer_whatsapp)})<br/>
+        <strong>Produk:</strong> ${escapeHtml(order.product_title)} — <strong>${formatRupiah(order.amount)}</strong><br/>
+        <strong>Metode:</strong> ${escapeHtml(order.payment_method)}
+        ${order.notes ? `<br/><strong>Catatan:</strong> ${escapeHtml(order.notes)}` : ""}
+      `;
+
+      const img = document.getElementById("proofViewerImage");
+      const fallbackNote = document.getElementById("proofViewerFallbackNote");
+      fallbackNote.classList.add("hidden");
+      img.classList.remove("hidden");
+      img.src = order.proof_url;
+      img.onerror = function () {
+        img.classList.add("hidden");
+        fallbackNote.classList.remove("hidden");
+      };
+
+      document.getElementById("proofViewerExternalBtn").href = order.proof_url;
+      openModal("proofViewerModal");
+    }
+
+    async function changeOrderStatus(orderId, newStatus) {
+      setLoading(true, "Memperbarui status pesanan...");
+      try {
+        await callApi("updateOrderStatus", { id: orderId, status: newStatus }, "POST");
+        const idx = appState.orders.findIndex(o => o.id === orderId);
+        if (idx !== -1) appState.orders[idx].status = newStatus;
+        renderAdminWorkspace();
+        showToast(`Status pesanan ${orderId} diperbarui menjadi ${newStatus === "confirmed" ? "Lunas" : "Ditolak"}.`, "success");
+      } catch (err) {
+        showToast(err.message, "error");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    function promptDeleteOrder(orderId) {
+      document.getElementById("deleteTargetName").textContent = `Pesanan ${orderId}`;
+      document.getElementById("btnConfirmDeleteExecute").onclick = () => executeDeleteOrder(orderId);
+      openModal("confirmDeleteModal");
+    }
+
+    async function executeDeleteOrder(orderId) {
+      closeModal("confirmDeleteModal");
+      setLoading(true, "Menghapus data pesanan...");
+      try {
+        await callApi("deleteOrder", { id: orderId }, "POST");
+        appState.orders = appState.orders.filter(o => o.id !== orderId);
+        renderAdminWorkspace();
+        showToast("Data pesanan berhasil dihapus.", "success");
+      } catch (err) {
+        showToast(err.message, "error");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    // ==========================================
+    // STUDIO MODAL PRODUK (CRUD + UPLOAD FOTO + LIVE PREVIEW)
+    // ==========================================
+    function selectProductStatusRadio(status) {
+      const selectEl = document.getElementById("prodStatus");
+      selectEl.value = status;
+      syncStatusRadioCards();
+      updateProductModalLivePreview();
+    }
+
+    function syncStatusRadioCards() {
+      const status = document.getElementById("prodStatus").value;
+      const activeCard = document.getElementById("statusCardActive");
+      const draftCard = document.getElementById("statusCardDraft");
+      activeCard.classList.toggle("selected-active", status === "active");
+      draftCard.classList.toggle("selected-draft", status === "draft");
+    }
+
+    function testProductDemoUrl() {
+      const url = document.getElementById("prodDemoUrl").value.trim();
+      if (!url) {
+        showToast("Masukkan URL Live Demo terlebih dahulu untuk diuji.", "info");
+        return;
+      }
+      if (!/^https?:\/\//i.test(url)) {
+        showToast("URL Live Demo harus diawali http:// atau https://", "error");
+        return;
+      }
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    function switchThumbSourceMode(mode) {
+      const isUpload = mode === "upload";
+      document.getElementById("btnThumbModeUpload").classList.toggle("active", isUpload);
+      document.getElementById("btnThumbModeUrl").classList.toggle("active", !isUpload);
+      document.getElementById("thumbUploadPane").classList.toggle("hidden", !isUpload);
+      document.getElementById("thumbUrlPane").classList.toggle("hidden", isUpload);
+      updateProductModalLivePreview();
+    }
+
+    function compressImageFileToDataUrl(file, maxWidth = 1280, quality = 0.85) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onerror = () => reject(new Error("Gagal membaca file foto dari perangkat."));
+        reader.onload = (e) => {
+          const img = new Image();
+          img.onerror = () => reject(new Error("File gambar tidak valid atau rusak."));
+          img.onload = () => {
+            let targetW = img.width;
+            let targetH = img.height;
+            if (targetW > maxWidth) {
+              targetH = Math.round((targetH * maxWidth) / targetW);
+              targetW = maxWidth;
+            }
+            const canvas = document.createElement("canvas");
+            canvas.width = targetW;
+            canvas.height = targetH;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, targetW, targetH);
+
+            const outputMime = file.type === "image/png" ? "image/png" : "image/jpeg";
+            const dataUrl = canvas.toDataURL(outputMime, quality);
+            resolve({
+              dataUrl,
+              mimeType: outputMime,
+              base64: dataUrl.split(",")[1]
+            });
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function handleProductThumbFileSelect(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      if (!file.type || !file.type.startsWith("image/")) {
+        showToast("Silakan pilih file gambar (JPG, PNG, WEBP, dll).", "error");
+        clearProductThumbFile();
+        return;
+      }
+
+      if (file.size > 15 * 1024 * 1024) {
+        showToast("Ukuran foto maksimal 15 MB.", "error");
+        clearProductThumbFile();
+        return;
+      }
+
+      try {
+        const compressed = await compressImageFileToDataUrl(file, 1280, 0.85);
+        appState.productThumbPayload = {
+          fileName: file.name,
+          mimeType: compressed.mimeType,
+          base64: compressed.base64,
+          dataUrl: compressed.dataUrl
+        };
+
+        document.getElementById("prodThumbDropzone").classList.add("has-file");
+        document.getElementById("prodThumbFileLabel").textContent = `Terpilih: ${file.name}`;
+        document.getElementById("prodThumbFileStatus").classList.remove("hidden");
+        updateProductModalLivePreview();
+        showToast("Foto thumbnail siap digunakan.", "success");
+      } catch (err) {
+        showToast(err.message, "error");
+        clearProductThumbFile();
+      }
+    }
+
+    function clearProductThumbFile() {
+      appState.productThumbPayload = null;
+      const input = document.getElementById("prodThumbFile");
+      if (input) input.value = "";
+      document.getElementById("prodThumbDropzone").classList.remove("has-file");
+      document.getElementById("prodThumbFileStatus").classList.add("hidden");
+      updateProductModalLivePreview();
+    }
+
+    function updateProductModalLivePreview() {
+      const title = document.getElementById("prodTitle").value.trim() || "Nama Produk Digital Anda";
+      const category = document.getElementById("prodCategory").value.trim() || "Kategori Produk";
+      const status = document.getElementById("prodStatus").value;
+      const price = Number(document.getElementById("prodPrice").value) || 0;
+      const discountPrice = Number(document.getElementById("prodDiscountPrice").value) || 0;
+      const thumbUrl = document.getElementById("prodThumbUrl").value.trim();
+      const shortDesc = document.getElementById("prodShortDesc").value;
+
+      document.getElementById("shortDescCharCount").textContent = `${shortDesc.length} / 160`;
+
+      const statusChip = document.getElementById("modalPreviewStatusChip");
+      if (status === "active") {
+        statusChip.textContent = "Aktif di Publik";
+        statusChip.className = "badge badge-emerald";
+      } else {
+        statusChip.textContent = "Mode Draft";
+        statusChip.className = "badge badge-amber";
+      }
+
+      document.getElementById("modalPreviewCategory").textContent = category;
+      document.getElementById("modalPreviewTitle").textContent = title;
+      document.getElementById("modalPreviewShortDesc").textContent =
+        shortDesc.trim() || "Ringkasan singkat produk akan tampil secara otomatis di sini saat Anda mengetik.";
+
+      const previewImg = document.getElementById("modalPreviewThumb");
+      const fallbackImg = getFallbackThumbSvg(title);
+      previewImg.onerror = function () {
+        this.src = fallbackImg;
+      };
+      const activeThumbSrc = (appState.productThumbPayload && appState.productThumbPayload.dataUrl)
+        ? appState.productThumbPayload.dataUrl
+        : (thumbUrl || fallbackImg);
+      previewImg.src = activeThumbSrc;
+
+      const hasDiscount = discountPrice > 0 && discountPrice < price;
+      const promoBadge = document.getElementById("modalPreviewPromoBadge");
+      const oldPriceEl = document.getElementById("modalPreviewOldPrice");
+      const currPriceEl = document.getElementById("modalPreviewCurrentPrice");
+      const discountCalcRow = document.getElementById("modalDiscountCalcRow");
+
+      if (hasDiscount) {
+        const savings = price - discountPrice;
+        const pct = Math.round((savings / price) * 100);
+        promoBadge.classList.remove("hidden");
+        oldPriceEl.textContent = formatRupiah(price);
+        oldPriceEl.classList.remove("hidden");
+        currPriceEl.textContent = formatRupiah(discountPrice);
+
+        document.getElementById("modalDiscountSavingsText").textContent = `Pembeli Hemat ${formatRupiah(savings)}`;
+        document.getElementById("modalDiscountPercentBadge").textContent = `Diskon ${pct}%`;
+        discountCalcRow.classList.remove("hidden");
+      } else {
+        promoBadge.classList.add("hidden");
+        oldPriceEl.classList.add("hidden");
+        currPriceEl.textContent = formatRupiah(price);
+        discountCalcRow.classList.add("hidden");
+      }
+    }
+
+    function openProductModal(productId = "") {
+      const form = document.getElementById("productForm");
+      form.reset();
+      clearProductThumbFile();
+      document.getElementById("prodId").value = "";
+      document.getElementById("prodStatus").value = "active";
+
+      if (productId) {
+        const prod = appState.products.find(p => p.id === productId);
+        if (!prod) return;
+        document.getElementById("productModalTitle").textContent = "Edit Produk Digital";
+        document.getElementById("productModalSubtitle").textContent = `Memperbarui informasi katalog untuk ID: ${prod.id}`;
+        document.getElementById("prodId").value = prod.id;
+        document.getElementById("prodTitle").value = prod.title;
+        document.getElementById("prodCategory").value = prod.category;
+        document.getElementById("prodStatus").value = prod.status;
+        document.getElementById("prodPrice").value = prod.price;
+        document.getElementById("prodDiscountPrice").value = prod.discount_price || "";
+        document.getElementById("prodDemoUrl").value = prod.demo_url;
+        document.getElementById("prodThumbUrl").value = prod.thumbnail_url;
+        document.getElementById("prodOrderUrl").value = prod.order_url || "";
+        document.getElementById("prodShortDesc").value = prod.short_desc;
+        document.getElementById("prodFullDesc").value = prod.full_desc;
+        document.getElementById("prodFeatures").value = prod.features;
+        switchThumbSourceMode("upload");
+      } else {
+        document.getElementById("productModalTitle").textContent = "Tambah Produk Digital Baru";
+        document.getElementById("productModalSubtitle").textContent = "Lengkapi detail produk dan pantau pratinjau kartu etalase secara langsung.";
+        switchThumbSourceMode("upload");
+      }
+
+      syncStatusRadioCards();
+      updateProductModalLivePreview();
+      openModal("productModal");
+    }
+
+    async function handleProductSubmit(event) {
+      event.preventDefault();
+      const id = document.getElementById("prodId").value.trim();
+      const price = Number(document.getElementById("prodPrice").value) || 0;
+      const discountPrice = Number(document.getElementById("prodDiscountPrice").value) || 0;
+      const manualThumbUrl = document.getElementById("prodThumbUrl").value.trim();
+
+      if (discountPrice > 0 && discountPrice >= price) {
+        showToast("Harga promo harus lebih kecil daripada harga normal.", "error");
+        return;
+      }
+
+      if (!appState.productThumbPayload && !manualThumbUrl) {
+        showToast("Silakan upload foto thumbnail produk atau masukkan URL gambar.", "error");
+        return;
+      }
+
+      if (!appState.productThumbPayload && !/^(https?:\/\/|data:image\/)/i.test(manualThumbUrl)) {
+        showToast("URL gambar thumbnail harus diawali http:// atau https://", "error");
+        return;
+      }
+
+      const productPayload = {
+        id,
+        title: document.getElementById("prodTitle").value.trim(),
+        category: document.getElementById("prodCategory").value.trim(),
+        status: document.getElementById("prodStatus").value,
+        price,
+        discount_price: discountPrice,
+        demo_url: document.getElementById("prodDemoUrl").value.trim(),
+        thumbnail_url: manualThumbUrl,
+        thumb_file: appState.productThumbPayload ? {
+          fileName: appState.productThumbPayload.fileName,
+          mimeType: appState.productThumbPayload.mimeType,
+          base64: appState.productThumbPayload.base64,
+          dataUrl: IS_PREVIEW ? appState.productThumbPayload.dataUrl : ""
+        } : null,
+        order_url: document.getElementById("prodOrderUrl").value.trim(),
+        short_desc: document.getElementById("prodShortDesc").value.trim(),
+        full_desc: document.getElementById("prodFullDesc").value.trim(),
+        features: document.getElementById("prodFeatures").value.trim()
+      };
+
+      setLoading(true, appState.productThumbPayload
+        ? "Mengunggah foto thumbnail & menyimpan produk..."
+        : (id ? "Menyimpan perubahan produk..." : "Menambahkan produk baru..."));
+      try {
+        if (id) {
+          const res = await callApi("updateProduct", { product: productPayload }, "POST");
+          const idx = appState.products.findIndex(p => p.id === id);
+          if (idx !== -1) appState.products[idx] = res.data;
+          showToast("Produk berhasil diperbarui.", "success");
+        } else {
+          const res = await callApi("createProduct", { product: productPayload }, "POST");
+          appState.products.unshift(res.data);
+          showToast("Produk digital baru berhasil ditambahkan.", "success");
+        }
+
+        clearProductThumbFile();
+        closeModal("productModal");
+        renderAdminWorkspace();
+      } catch (err) {
+        showToast(err.message, "error");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    async function quickToggleProductStatus(productId) {
+      const prod = appState.products.find(p => p.id === productId);
+      if (!prod) return;
+      const nextStatus = prod.status === "active" ? "draft" : "active";
+
+      setLoading(true, "Mengubah status publikasi...");
+      try {
+        const res = await callApi("updateProduct", {
+          product: { ...prod, status: nextStatus }
+        }, "POST");
+        const idx = appState.products.findIndex(p => p.id === productId);
+        if (idx !== -1) appState.products[idx] = res.data;
+        renderAdminWorkspace();
+        showToast(`Status produk diubah menjadi ${nextStatus === "active" ? "Aktif" : "Draft"}.`, "success");
+      } catch (err) {
+        showToast(err.message, "error");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    function promptDeleteProduct(productId) {
+      const prod = appState.products.find(p => p.id === productId);
+      if (!prod) return;
+      document.getElementById("deleteTargetName").textContent = prod.title;
+      const execBtn = document.getElementById("btnConfirmDeleteExecute");
+      execBtn.onclick = () => executeDeleteProduct(productId);
+      openModal("confirmDeleteModal");
+    }
+
+    async function executeDeleteProduct(productId) {
+      closeModal("confirmDeleteModal");
+      setLoading(true, "Menghapus produk...");
+      try {
+        await callApi("deleteProduct", { id: productId }, "POST");
+        appState.products = appState.products.filter(p => p.id !== productId);
+        renderAdminWorkspace();
+        showToast("Produk berhasil dihapus dari katalog.", "success");
+      } catch (err) {
+        showToast(err.message, "error");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    // ==========================================
+    // PENGATURAN TOKO & UBAH PASSWORD ADMIN
+    // ==========================================
+    function populateSettingsForm() {
+      const s = appState.settings;
+      document.getElementById("setStoreName").value = s.store_name || "";
+      document.getElementById("setStoreTagline").value = s.store_tagline || "";
+      document.getElementById("setHeroTitle").value = s.hero_title || "";
+      document.getElementById("setHeroSubtitle").value = s.hero_subtitle || "";
+      document.getElementById("setPaymentMethods").value = s.payment_methods || DUMMY_SETTINGS.payment_methods;
+      document.getElementById("setWhatsappNumber").value = s.whatsapp_number || "";
+      document.getElementById("setWaTemplate").value = s.wa_template || "";
+    }
+
+    async function saveStoreSettings(event) {
+      event.preventDefault();
+      const updated = {
+        store_name: document.getElementById("setStoreName").value.trim(),
+        store_tagline: document.getElementById("setStoreTagline").value.trim(),
+        hero_title: document.getElementById("setHeroTitle").value.trim(),
+        hero_subtitle: document.getElementById("setHeroSubtitle").value.trim(),
+        payment_methods: document.getElementById("setPaymentMethods").value.trim(),
+        whatsapp_number: document.getElementById("setWhatsappNumber").value.trim(),
+        wa_template: document.getElementById("setWaTemplate").value.trim()
+      };
+
+      setLoading(true, "Menyimpan pengaturan toko...");
+      try {
+        const res = await callApi("updateSettings", { settings: updated }, "POST");
+        appState.settings = { ...appState.settings, ...(res.data || updated) };
+        applyStoreSettingsToUI();
+        showToast("Pengaturan toko berhasil disimpan.", "success");
+      } catch (err) {
+        showToast(err.message, "error");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    async function handleChangePassword(event) {
+      event.preventDefault();
+      const oldPassword = document.getElementById("oldPasswordInput").value;
+      const newPassword = document.getElementById("newPasswordInput").value;
+      const confirmPassword = document.getElementById("confirmPasswordInput").value;
+
+      if (newPassword.length < 6) {
+        showToast("Password baru minimal 6 karakter.", "error");
+        return;
+      }
+      if (newPassword !== confirmPassword) {
+        showToast("Konfirmasi password baru tidak cocok.", "error");
+        return;
+      }
+
+      setLoading(true, "Memperbarui password admin...");
+      try {
+        await callApi("changePassword", { oldPassword, newPassword }, "POST");
+        document.getElementById("changePasswordForm").reset();
+        showToast("Password admin berhasil diperbarui.", "success");
+      } catch (err) {
+        showToast(err.message, "error");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    // ==========================================
+    // KONTROL MODAL
+    // ==========================================
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.remove("hidden");
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.add("hidden");
+    }
+
+    function closeModalOnBackdrop(event, modalId) {
+      if (event.target.id === modalId) {
+        closeModal(modalId);
+      }
+    }
+  </script>
+</body>
+</html>
