@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Katalog Produk Digital & Template Website Profesional dengan Fitur Live Demo Interaktif." />
-  <meta property="og:title" content="DigiStore Studio — Katalog Produk Digital & Live Demo" />
-  <meta property="og:description" content="Jelajahi dan uji langsung template website serta aplikasi digital melalui fitur Live Demo interaktif." />
+  <meta name="description" content="Katalog Produk Digital & Template Website Profesional Siap Pakai." />
+  <meta property="og:title" content="DigiStore Studio — Katalog Produk Digital" />
+  <meta property="og:description" content="Jelajahi koleksi template website, sistem informasi, dan aplikasi digital siap pakai." />
   <meta property="og:type" content="website" />
-  <title>DigiStore Studio — Toko Produk Digital & Live Demo</title>
+  <title>DigiStore Studio — Toko Produk Digital</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -553,13 +553,16 @@
     }
 
     .product-card-actions {
-      display: grid;
-      grid-template-columns: 1fr auto;
+      display: flex;
       gap: 8px;
     }
 
+    .product-card-actions .btn-primary {
+      flex: 1;
+    }
+
     /* ==========================================
-       HALAMAN DETAIL PRODUK + LIVE DEMO SANDBOX
+       HALAMAN DETAIL PRODUK
        ========================================== */
     .detail-section {
       padding: 32px 0 80px;
@@ -583,7 +586,6 @@
       display: grid;
       grid-template-columns: 1.05fr 1fr;
       gap: 32px;
-      margin-bottom: 36px;
     }
 
     .detail-media-box {
@@ -667,185 +669,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-    }
-
-    /* LIVE DEMO SANDBOX DI BAWAH DETAIL PRODUK */
-    .live-demo-wrapper {
-      background: var(--white);
-      border: 1px solid var(--slate-200);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .demo-header-bar {
-      background: var(--slate-900);
-      color: var(--white);
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .demo-title-group {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .browser-dots {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .browser-dots span {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-    }
-
-    .dot-red { background: #ef4444; }
-    .dot-yellow { background: #f59e0b; }
-    .dot-green { background: #10b981; }
-
-    .demo-label {
-      font-weight: 700;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .live-pulse {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--emerald);
-      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.25);
-    }
-
-    .viewport-switcher {
-      display: flex;
-      align-items: center;
-      background: var(--slate-800);
-      padding: 4px;
-      border-radius: var(--radius-sm);
-      gap: 4px;
-    }
-
-    .vp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--slate-300);
-      transition: var(--transition);
-    }
-
-    .vp-btn:hover {
-      color: var(--white);
-    }
-
-    .vp-btn.active {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    .demo-tools {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .demo-tool-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 12px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      background: var(--slate-800);
-      color: var(--slate-200);
-      border: 1px solid var(--slate-700);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .demo-tool-btn:hover {
-      background: var(--slate-700);
-      color: var(--white);
-    }
-
-    .demo-canvas {
-      background-color: #1e293b;
-      background-image: radial-gradient(#334155 1px, transparent 1px);
-      background-size: 18px 18px;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 640px;
-      overflow-x: auto;
-    }
-
-    .demo-canvas.mode-desktop {
-      padding: 0;
-    }
-
-    .demo-iframe-container {
-      width: 100%;
-      height: 680px;
-      background: var(--white);
-      transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.35s ease;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-    }
-
-    .demo-iframe-container.vp-desktop {
-      width: 100%;
-      border-radius: 0;
-    }
-
-    .demo-iframe-container.vp-tablet {
-      width: 768px;
-      max-width: 100%;
-      border-radius: 16px;
-      border: 6px solid var(--slate-700);
-    }
-
-    .demo-iframe-container.vp-mobile {
-      width: 375px;
-      max-width: 100%;
-      border-radius: 24px;
-      border: 8px solid var(--slate-700);
-    }
-
-    .demo-iframe-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-      background: var(--white);
-    }
-
-    .demo-footer-note {
-      background: var(--slate-50);
-      border-top: 1px solid var(--slate-200);
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 0.82rem;
-      color: var(--slate-600);
     }
 
     /* ==========================================
@@ -1402,6 +1225,109 @@
       overflow: hidden;
     }
 
+    .modal-box.modal-demo {
+      max-width: 1120px;
+      height: 88vh;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .demo-modal-topbar {
+      padding: 12px 18px;
+      background: var(--slate-900);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .demo-url-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--slate-800);
+      border: 1px solid var(--slate-700);
+      color: var(--slate-300);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      max-width: 340px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .demo-viewport-switch {
+      display: inline-flex;
+      background: var(--slate-800);
+      padding: 3px;
+      border-radius: 8px;
+      gap: 4px;
+    }
+
+    .demo-vp-btn {
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--slate-300);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition);
+    }
+
+    .demo-vp-btn:hover {
+      color: var(--white);
+    }
+
+    .demo-vp-btn.active {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .demo-stage-area {
+      flex: 1;
+      background: #e2e8f0;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .demo-frame-container {
+      width: 100%;
+      height: 100%;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      transition: width 0.28s ease;
+      border: 1px solid var(--slate-300);
+    }
+
+    .demo-frame-container.vp-tablet {
+      width: 768px;
+      max-width: 100%;
+    }
+
+    .demo-frame-container.vp-mobile {
+      width: 390px;
+      max-width: 100%;
+    }
+
+    .demo-frame-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
     @keyframes modalPop {
       from { opacity: 0; transform: scale(0.96) translateY(8px); }
       to { opacity: 1; transform: scale(1) translateY(0); }
@@ -1861,15 +1787,6 @@
         grid-template-columns: 1fr;
       }
 
-      .demo-header-bar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .demo-iframe-container {
-        height: 520px;
-      }
-
       .success-confirm-card {
         padding: 24px 18px;
       }
@@ -1888,7 +1805,7 @@
   <div id="toastContainer" class="toast-container"></div>
 
   <!-- =========================================================
-       WAJAH 1: HALAMAN PUBLIK (STOREFRONT, LIVE DEMO & CHECKOUT)
+       WAJAH 1: HALAMAN PUBLIK (STOREFRONT, DETAIL & CHECKOUT)
        ========================================================= -->
   <div id="publicView">
     <header class="pub-navbar">
@@ -1903,7 +1820,7 @@
           </div>
           <div class="brand-text">
             <h1 id="navStoreName">DigiStore Studio</h1>
-            <span id="navStoreTagline">Katalog Produk Digital & Live Demo</span>
+            <span id="navStoreTagline">Katalog Produk Digital Siap Pakai</span>
           </div>
         </a>
 
@@ -1932,20 +1849,19 @@
           <div class="hero-content">
             <div class="hero-pill">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
-              Uji Langsung Sebelum Membeli via Live Demo Interaktif
+              Koleksi Template Website & Produk Digital Profesional
             </div>
             <h2 id="heroTitle" class="hero-title">Solusi Website & Aplikasi Digital Siap Pakai</h2>
-            <p id="heroSubtitle" class="hero-subtitle">Pilih produk digital berkualitas tinggi dan coba langsung tampilan serta fiturnya di layar Desktop, Tablet, maupun Smartphone sebelum melakukan pemesanan.</p>
+            <p id="heroSubtitle" class="hero-subtitle">Pilih produk digital berkualitas tinggi yang dirancang modern, responsif, dan siap digunakan untuk kebutuhan bisnis maupun proyek Anda.</p>
 
             <div class="hero-search-wrap">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
-              <input type="text" id="publicSearchInput" placeholder="Cari template website, sistem kasir, landing page..." oninput="renderPublicCatalog()" />
+              <input type="text" id="publicSearchInput" placeholder="Cari template website, sistem informasi, landing page..." oninput="renderPublicCatalog()" />
               <button class="btn btn-primary btn-sm" onclick="renderPublicCatalog()">Cari</button>
             </div>
           </div>
@@ -1961,7 +1877,7 @@
               <label for="publicSortSelect" style="font-size: 0.85rem; color: var(--slate-500); font-weight: 600;">Urutkan:</label>
               <select id="publicSortSelect" class="sort-select" onchange="renderPublicCatalog()">
                 <option value="newest">Terbaru</option>
-                <option value="popular">Demo Terpopuler</option>
+                <option value="popular">Paling Populer</option>
                 <option value="price_asc">Harga Terendah</option>
                 <option value="price_desc">Harga Tertinggi</option>
               </select>
@@ -1973,7 +1889,7 @@
       </section>
     </main>
 
-    <!-- VIEW 1B: DETAIL PRODUK + LIVE DEMO DI BAWAHNYA -->
+    <!-- VIEW 1B: DETAIL PRODUK -->
     <section id="publicDetailSection" class="detail-section hidden">
       <div class="container">
         <div class="detail-topbar">
@@ -1984,10 +1900,10 @@
             </svg>
             Kembali ke Katalog
           </button>
-          <span id="detailDemoCounterBadge" class="badge badge-primary">0x Live Demo Dicoba</span>
+          <span id="detailDemoCounterBadge" class="badge badge-primary">0x Dilihat</span>
         </div>
 
-        <!-- BAGIAN ATAS: INFORMASI & SPESIFIKASI PRODUK -->
+        <!-- INFORMASI & SPESIFIKASI PRODUK -->
         <div class="detail-overview-card">
           <div>
             <div class="detail-media-box">
@@ -2024,85 +1940,13 @@
                 </svg>
                 Pesan Sekarang
               </button>
-              <a href="#liveDemoSandbox" class="btn btn-primary btn-lg">
+              <button type="button" id="detailOpenDemoBtn" class="btn btn-primary btn-lg" onclick="openProductDemoModal()">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                   <polygon points="5 3 19 12 5 21 5 3"></polygon>
                 </svg>
-                Coba Live Demo di Bawah
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- BAGIAN BAWAH: LIVE DEMO INTERAKTIF -->
-        <div id="liveDemoSandbox" class="live-demo-wrapper">
-          <div class="demo-header-bar">
-            <div class="demo-title-group">
-              <div class="browser-dots">
-                <span class="dot-red"></span>
-                <span class="dot-yellow"></span>
-                <span class="dot-green"></span>
-              </div>
-              <div class="demo-label">
-                <span class="live-pulse"></span>
-                Live Demo Interaktif: <span id="demoBarProductTitle" style="color: #93c5fd;">Produk</span>
-              </div>
-            </div>
-
-            <!-- PENGATUR UKURAN LAYAR DEMO -->
-            <div class="viewport-switcher" role="group" aria-label="Pilih Ukuran Layar Demo">
-              <button type="button" class="vp-btn active" data-vp="desktop" onclick="setDemoViewport('desktop')">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                  <line x1="8" y1="21" x2="16" y2="21"></line>
-                  <line x1="12" y1="17" x2="12" y2="21"></line>
-                </svg>
-                Desktop
-              </button>
-              <button type="button" class="vp-btn" data-vp="tablet" onclick="setDemoViewport('tablet')">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                </svg>
-                Tablet
-              </button>
-              <button type="button" class="vp-btn" data-vp="mobile" onclick="setDemoViewport('mobile')">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                </svg>
-                Mobile
+                Lihat Demo Aplikasi
               </button>
             </div>
-
-            <div class="demo-tools">
-              <button type="button" class="demo-tool-btn" onclick="reloadDemoIframe()">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                  <polyline points="23 4 23 10 17 10"></polyline>
-                  <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
-                </svg>
-                Muat Ulang
-              </button>
-              <a id="demoExternalLink" href="#" target="_blank" rel="noopener noreferrer" class="demo-tool-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-                Buka Tab Baru
-              </a>
-            </div>
-          </div>
-
-          <div id="demoCanvas" class="demo-canvas mode-desktop">
-            <div id="demoIframeContainer" class="demo-iframe-container vp-desktop">
-              <iframe id="liveDemoIframe" src="about:blank" title="Live Demo Produk Digital" loading="lazy" allowfullscreen></iframe>
-            </div>
-          </div>
-
-          <div class="demo-footer-note">
-            <span>Tips: Gunakan tombol <strong>Desktop / Tablet / Mobile</strong> di atas untuk menguji responsivitas tampilan produk.</span>
-            <span>Tampilan tidak muncul? Klik <strong>Buka Tab Baru</strong> di pojok kanan atas panel demo.</span>
           </div>
         </div>
       </div>
@@ -2474,12 +2318,13 @@
 
             <div class="kpi-card">
               <div class="kpi-info">
-                <span>Total Tayangan Live Demo</span>
+                <span>Total Tayangan Produk</span>
                 <strong id="kpiTotalDemoViews">0</strong>
               </div>
               <div class="kpi-icon" style="background: #f3e8ff; color: #7e22ce;">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
                 </svg>
               </div>
             </div>
@@ -2487,7 +2332,7 @@
 
           <div class="panel-card">
             <div class="panel-header">
-              <h3>Produk dengan Interaksi Live Demo Tertinggi</h3>
+              <h3>Produk Digital Paling Banyak Dilihat</h3>
               <button class="btn btn-primary btn-sm" onclick="openProductModal()">
                 + Tambah Produk Baru
               </button>
@@ -2500,7 +2345,7 @@
                     <th>Kategori</th>
                     <th>Harga</th>
                     <th>Status</th>
-                    <th>Live Demo Dicoba</th>
+                    <th>Dilihat</th>
                   </tr>
                 </thead>
                 <tbody id="dashboardTopDemoTable"></tbody>
@@ -2538,9 +2383,8 @@
                     <th>Produk</th>
                     <th>Kategori</th>
                     <th>Harga</th>
-                    <th>URL Live Demo</th>
                     <th>Status</th>
-                    <th>Demo</th>
+                    <th>Dilihat</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -2832,30 +2676,14 @@
               </div>
             </div>
 
-            <!-- BAGIAN 3: MEDIA & LIVE DEMO -->
+            <!-- BAGIAN 3: GAMBAR THUMBNAIL & TAUTAN OPSIONAL -->
             <div class="studio-section-card">
               <div class="studio-section-header">
                 <span class="studio-step-num">3</span>
-                <h4>Tautan Live Demo & Gambar Pratinjau</h4>
+                <h4>Gambar Thumbnail & Tautan Opsional</h4>
               </div>
 
               <div class="form-grid">
-                <div class="form-group full">
-                  <label for="prodDemoUrl">URL Live Demo Website *</label>
-                  <div class="input-affix-wrap">
-                    <input type="url" id="prodDemoUrl" placeholder="https://contoh-demo-website.github.io" required oninput="updateProductModalLivePreview()" />
-                    <button type="button" class="input-suffix-btn" onclick="testProductDemoUrl()" title="Buka URL Demo di Tab Baru">
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                      </svg>
-                      Uji Link
-                    </button>
-                  </div>
-                  <span class="form-hint">URL ini akan dimuat otomatis ke dalam panel Live Demo di bawah detail produk.</span>
-                </div>
-
                 <div class="form-group full">
                   <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
                     <label style="margin-bottom: 0;">Gambar Thumbnail Produk *</label>
@@ -2902,7 +2730,22 @@
                     <input type="url" id="prodThumbUrl" class="form-control" placeholder="https://images.unsplash.com/..." oninput="updateProductModalLivePreview()" />
                   </div>
 
-                  <span class="form-hint">Rasio rekomendasi 16:9 (misalnya 1200x675 px). Hasil gambar langsung tampil di Live Preview sebelah kanan.</span>
+                  <span class="form-hint">Rasio rekomendasi 16:9 (misalnya 1200x675 px). Hasil gambar langsung tampil di Pratinjau Kartu sebelah kanan.</span>
+                </div>
+
+                <div class="form-group full">
+                  <label for="prodDemoUrl">URL Demo / Preview Aplikasi (Opsional)</label>
+                  <div class="input-affix-wrap">
+                    <input type="url" id="prodDemoUrl" placeholder="Isi https://... atau kosongkan untuk pratinjau otomatis" oninput="updateProductModalLivePreview()" />
+                    <button type="button" class="input-suffix-btn" onclick="testProductDemoUrl()" title="Buka Tautan di Tab Baru">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Uji Link
+                    </button>
+                  </div>
                 </div>
 
                 <div class="form-group full">
@@ -2941,11 +2784,11 @@
             </div>
           </div>
 
-          <!-- KOLOM KANAN: LIVE PREVIEW KARTU KATALOG -->
+          <!-- KOLOM KANAN: PRATINJAU KARTU KATALOG -->
           <aside class="studio-preview-pane">
             <div class="studio-preview-sticky">
               <div class="preview-pane-label">
-                <span>Live Preview Kartu Toko</span>
+                <span>Pratinjau Kartu Toko</span>
                 <span id="modalPreviewStatusChip" class="badge badge-emerald">Aktif di Publik</span>
               </div>
 
@@ -2973,28 +2816,21 @@
 
                     <span class="demo-stat">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
-                      Live Demo
+                      Siap Pakai
                     </span>
                   </div>
 
                   <div class="product-card-actions">
-                    <span class="btn btn-primary" style="pointer-events: none;">Detail & Live Demo</span>
-                    <span class="btn btn-outline" style="pointer-events: none;">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                      </svg>
-                    </span>
+                    <span class="btn btn-primary" style="pointer-events: none;">Detail Produk</span>
                   </div>
                 </div>
               </article>
 
               <div class="preview-tips-box">
                 <strong style="color: var(--slate-800); font-size: 0.82rem;">Panduan Cepat Pengisian:</strong>
-                <span>1. Pastikan <strong>URL Live Demo</strong> menggunakan protokol <code>https://</code> agar dapat dimuat di iframe.</span>
+                <span>1. Unggah foto thumbnail berasio <strong>16:9</strong> agar tampilan kartu terlihat proporsional.</span>
                 <span>2. Isi <strong>Harga Promo</strong> lebih kecil dari Harga Normal untuk menampilkan label promo hijau otomatis.</span>
               </div>
             </div>
@@ -3018,25 +2854,73 @@
   </div>
 
   <!-- =========================================================
-       MODAL PRATINJAU BUKTI PEMBAYARAN (ADMIN)
+       MODAL DEMO / PRATINJAU APLIKASI INTERAKTIF
+       ========================================================= -->
+  <div id="demoPreviewModal" class="modal-backdrop hidden" onclick="closeModalOnBackdrop(event, 'demoPreviewModal')">
+    <div class="modal-box modal-demo">
+      <div class="demo-modal-topbar">
+        <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
+          <span class="badge badge-emerald">Demo Preview</span>
+          <strong id="demoModalProductTitle" style="font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 260px;">Pratinjau Aplikasi</strong>
+          <span id="demoModalUrlPill" class="demo-url-pill">https://preview.digistore.id</span>
+        </div>
+
+        <div class="demo-viewport-switch" role="group" aria-label="Ukuran Layar Demo">
+          <button type="button" class="demo-vp-btn active" data-vp="desktop" onclick="setDemoViewport('desktop')">Desktop</button>
+          <button type="button" class="demo-vp-btn" data-vp="tablet" onclick="setDemoViewport('tablet')">Tablet</button>
+          <button type="button" class="demo-vp-btn" data-vp="mobile" onclick="setDemoViewport('mobile')">HP</button>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a id="demoModalExternalLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm hidden" style="background: var(--slate-800); color: var(--white); border-color: var(--slate-600);">
+            Tab Baru
+          </a>
+          <button type="button" class="btn btn-emerald btn-sm" onclick="orderFromDemoModal()">
+            Pesan Produk Ini
+          </button>
+          <button type="button" class="btn btn-ghost btn-sm" style="color: var(--slate-300);" onclick="closeDemoPreviewModal()" aria-label="Tutup Demo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="demoExternalNoticeBar" class="hidden" style="background: var(--amber-soft); color: #92400e; padding: 7px 16px; font-size: 0.78rem; text-align: center; border-bottom: 1px solid #fde68a;">
+        Jika pratinjau tautan eksternal tidak muncul karena pembatasan frame dari situs tujuan, gunakan tombol <strong>Tab Baru</strong> di pojok kanan atas.
+      </div>
+
+      <div class="demo-stage-area">
+        <div id="demoFrameContainer" class="demo-frame-container">
+          <iframe id="demoPreviewIframe" title="Pratinjau Demo Aplikasi" sandbox="allow-scripts allow-forms allow-same-origin allow-popups"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL LIHAT BUKTI PEMBAYARAN (ADMIN)
        ========================================================= -->
   <div id="proofViewerModal" class="modal-backdrop hidden" onclick="closeModalOnBackdrop(event, 'proofViewerModal')">
     <div class="modal-box">
       <div class="modal-header">
-        <h3 id="proofViewerTitle">Bukti Pembayaran Pesanan</h3>
-        <button class="btn btn-ghost btn-sm" onclick="closeModal('proofViewerModal')" aria-label="Tutup">
+        <h3 id="proofViewerTitle">Bukti Pembayaran</h3>
+        <button type="button" class="btn btn-ghost btn-sm" onclick="closeModal('proofViewerModal')" aria-label="Tutup">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         </button>
       </div>
-      <div class="modal-body" style="text-align: center;">
-        <div id="proofViewerMeta" style="text-align: left; background: var(--slate-50); padding: 12px 14px; border-radius: 10px; margin-bottom: 14px; font-size: 0.86rem;"></div>
-        <img id="proofViewerImage" src="" alt="Bukti Transfer Pembeli" style="max-height: 440px; margin: 0 auto; border-radius: 10px; border: 1px solid var(--slate-200);" />
-        <p id="proofViewerFallbackNote" class="hidden" style="margin-top: 12px; font-size: 0.85rem; color: var(--slate-600);">
-          Pratinjau gambar langsung tidak tersedia untuk format file ini. Silakan buka tautan asli di bawah.
-        </p>
+      <div class="modal-body" style="display: flex; flex-direction: column; gap: 14px;">
+        <div id="proofViewerMeta" style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 10px; padding: 12px 14px; font-size: 0.86rem; line-height: 1.6;"></div>
+        <div style="text-align: center; background: var(--slate-100); border-radius: 12px; padding: 12px; border: 1px solid var(--slate-200);">
+          <img id="proofViewerImage" src="" alt="Bukti Transfer" style="max-height: 420px; margin: 0 auto; border-radius: 8px;" />
+          <p id="proofViewerFallbackNote" class="hidden" style="padding: 24px; color: var(--slate-600); font-size: 0.88rem;">
+            Pratinjau langsung tidak tersedia untuk format file ini (misal PDF). Silakan buka file asli menggunakan tombol di bawah.
+          </p>
+        </div>
       </div>
       <div class="modal-footer">
         <a id="proofViewerExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Buka File Asli</a>
@@ -3082,9 +2966,9 @@
     // ==========================================
     const DUMMY_SETTINGS = {
       store_name: "DigiStore Studio",
-      store_tagline: "Katalog Produk Digital & Live Demo",
+      store_tagline: "Katalog Produk Digital Siap Pakai",
       hero_title: "Solusi Website & Aplikasi Digital Siap Pakai",
-      hero_subtitle: "Pilih produk digital berkualitas tinggi dan coba langsung tampilan serta fiturnya di layar Desktop, Tablet, maupun Smartphone sebelum melakukan pemesanan.",
+      hero_subtitle: "Pilih produk digital berkualitas tinggi yang dirancang modern, responsif, dan siap digunakan untuk kebutuhan bisnis maupun proyek Anda.",
       payment_methods: "Bank BCA - 1234567890 a.n. DigiStore Studio\nBank Mandiri - 0987654321 a.n. DigiStore Studio\nE-Wallet DANA / GoPay / OVO - 081234567890 a.n. DigiStore Studio\nQRIS All Payment (Konfirmasi Admin)",
       whatsapp_number: "6281234567890",
       wa_template: "Halo Admin, saya sudah melakukan pembayaran untuk pesanan *{invoice_id}* ({product_name} - {price}) melalui *{payment_method}* atas nama *{customer_name}*. Mohon konfirmasinya."
@@ -3101,7 +2985,7 @@
         full_desc: "NovaCorp dirancang khusus untuk perusahaan jasa, konsultan, maupun startup yang ingin tampil profesional di internet. Dilengkapi struktur halaman lengkap mulai dari layanan, portofolio proyek, testimoni klien, hingga formulir kontak cepat.",
         features: "Desain Responsif Desktop, Tablet & Mobile\nStruktur SEO Semantik & Loading Cepat\nMudah Dikustomisasi Tanpa Framework Berat\nGratis Panduan Deployment GitHub Pages",
         thumbnail_url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
-        demo_url: "https://example.com",
+        demo_url: "demo://novacorp",
         order_url: "",
         status: "active",
         demo_views: 142,
@@ -3117,7 +3001,7 @@
         full_desc: "Sistem informasi sekolah berbasis WebApp yang ringan tanpa perlu biaya sewa VPS bulanan. Mendukung halaman profil sekolah, berita kegiatan, serta portal pendaftaran siswa baru secara daring.",
         features: "Portal Informasi Sekolah Lengkap\nFormulir PPDB Online Responsif\nDashboard Admin Manajemen Data\nDokumentasi Penggunaan Lengkap",
         thumbnail_url: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=900&q=80",
-        demo_url: "https://www.wikipedia.org",
+        demo_url: "demo://eduportal",
         order_url: "",
         status: "active",
         demo_views: 218,
@@ -3133,7 +3017,7 @@
         full_desc: "Tingkatkan konversi penjualan produk digital Anda dengan tata letak landing page yang teruji. Dilengkapi bagian perbandingan paket harga, FAQ interaktif, dan tombol ajakan bertindak (CTA) yang menonjol.",
         features: "Tabel Harga & Perbandingan Paket\nBagian FAQ Interaktif\nOptimasi Kecepatan Skor Tinggi\nSiap Pasang di Blogger, Sites & GitHub",
         thumbnail_url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
-        demo_url: "https://example.org",
+        demo_url: "demo://launchkit",
         order_url: "",
         status: "active",
         demo_views: 89,
@@ -3149,7 +3033,7 @@
         full_desc: "Memudahkan pasien mengambil nomor antrean dari rumah dan memantau jadwal praktik dokter secara real-time.",
         features: "Booking Jadwal Dokter Online\nCetak Bukti Antrean Otomatis\nPanel Admin Rekap Kunjungan",
         thumbnail_url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80",
-        demo_url: "https://example.com",
+        demo_url: "",
         order_url: "",
         status: "draft",
         demo_views: 12,
@@ -3483,8 +3367,9 @@
     }
 
     function getFallbackThumbSvg(title) {
-      const cleanTitle = encodeURIComponent((title || "Produk Digital").slice(0, 28));
-      return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%23eef2ff"/><text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="%234f46e5">${cleanTitle}</text></svg>`;
+      const safeXmlTitle = escapeHtml((title || "Produk Digital").slice(0, 28));
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="#eef2ff"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#4f46e5">${safeXmlTitle}</text></svg>`;
+      return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg).replace(/'/g, "%27");
     }
 
     function setLoading(isLoading, text = "Memproses...") {
@@ -3517,7 +3402,7 @@
     }
 
     // ==========================================
-    // WAJAH 1: KATALOG PUBLIK & LIVE DEMO SANDBOX
+    // WAJAH 1: KATALOG PUBLIK & DETAIL PRODUK
     // ==========================================
     function getPublicProducts() {
       return appState.products.filter(p => p.status === "active");
@@ -3588,7 +3473,7 @@
         return `
           <article class="product-card">
             <div class="product-thumb-wrap">
-              <img src="${escapeHtml(prod.thumbnail_url || fallback)}" alt="${escapeHtml(prod.title)}" onerror="this.src='${fallback}'" />
+              <img src="${escapeHtml(prod.thumbnail_url || fallback)}" alt="${escapeHtml(prod.title)}" onerror="this.onerror=null;this.src='${fallback}'" />
               <div class="thumb-badges">
                 <span class="badge-glass">${escapeHtml(prod.category)}</span>
                 ${hasDiscount ? `<span class="badge-promo">Promo</span>` : ""}
@@ -3610,23 +3495,23 @@
 
                 <span class="demo-stat">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
                   </svg>
-                  ${Number(prod.demo_views) || 0}x Demo
+                  ${Number(prod.demo_views) || 0}x Dilihat
                 </span>
               </div>
 
               <div class="product-card-actions">
                 <button type="button" class="btn btn-primary" onclick="openProductDetail('${escapeHtml(prod.id)}')">
-                  Detail & Live Demo
+                  Detail Produk
                 </button>
-                <a href="${escapeHtml(prod.demo_url)}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" title="Buka Live Demo di Tab Baru">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                <button type="button" class="btn btn-outline" onclick="openProductDemoModal('${escapeHtml(prod.id)}')" title="Lihat Demo Aplikasi">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
                   </svg>
-                </a>
+                  Demo
+                </button>
               </div>
             </div>
           </article>
@@ -3643,7 +3528,6 @@
     function navigateToCatalog(event) {
       if (event) event.preventDefault();
       appState.currentProductId = null;
-      document.getElementById("liveDemoIframe").src = "about:blank";
       document.getElementById("publicDetailSection").classList.add("hidden");
       document.getElementById("publicCheckoutSection").classList.add("hidden");
       document.getElementById("publicCatalogSection").classList.remove("hidden");
@@ -3664,7 +3548,7 @@
       document.getElementById("detailCategoryBadge").textContent = prod.category;
       document.getElementById("detailTitle").textContent = prod.title;
       document.getElementById("detailThumbImg").src = prod.thumbnail_url || fallback;
-      document.getElementById("detailThumbImg").onerror = function () { this.src = fallback; };
+      document.getElementById("detailThumbImg").onerror = function () { this.onerror = null; this.src = fallback; };
       document.getElementById("detailCurrentPrice").textContent = formatRupiah(finalPrice);
 
       const oldPriceEl = document.getElementById("detailOldPrice");
@@ -3692,13 +3576,7 @@
 
       const nextViews = (Number(prod.demo_views) || 0) + 1;
       prod.demo_views = nextViews;
-      document.getElementById("detailDemoCounterBadge").textContent = `${nextViews}x Live Demo Dicoba`;
-
-      // Setup Live Demo Sandbox di bawah detail produk
-      document.getElementById("demoBarProductTitle").textContent = prod.title;
-      document.getElementById("demoExternalLink").href = prod.demo_url;
-      setDemoViewport("desktop");
-      document.getElementById("liveDemoIframe").src = prod.demo_url;
+      document.getElementById("detailDemoCounterBadge").textContent = `${nextViews}x Dilihat`;
 
       document.getElementById("publicCatalogSection").classList.add("hidden");
       document.getElementById("publicCheckoutSection").classList.add("hidden");
@@ -3708,23 +3586,191 @@
       callApi("trackDemoView", { id: prod.id }, "POST").catch(() => {});
     }
 
-    function setDemoViewport(vp) {
-      const container = document.getElementById("demoIframeContainer");
-      const canvas = document.getElementById("demoCanvas");
-      container.classList.remove("vp-desktop", "vp-tablet", "vp-mobile");
-      container.classList.add(`vp-${vp}`);
-      canvas.classList.toggle("mode-desktop", vp === "desktop");
+    // ==========================================
+    // DEMO / PRATINJAU APLIKASI INTERAKTIF
+    // ==========================================
+    function openProductDemoModal(productId = "") {
+      const targetId = productId || appState.currentProductId;
+      const prod = appState.products.find(p => p.id === targetId);
+      if (!prod) return;
 
-      document.querySelectorAll(".vp-btn").forEach(btn => {
-        btn.classList.toggle("active", btn.dataset.vp === vp);
-      });
+      appState.currentProductId = prod.id;
+      setDemoViewport("desktop");
+
+      document.getElementById("demoModalProductTitle").textContent = prod.title;
+      const iframe = document.getElementById("demoPreviewIframe");
+      const urlPill = document.getElementById("demoModalUrlPill");
+      const extBtn = document.getElementById("demoModalExternalLink");
+      const noticeBar = document.getElementById("demoExternalNoticeBar");
+
+      const rawDemoUrl = String(prod.demo_url || "").trim();
+      if (rawDemoUrl && /^https?:\/\//i.test(rawDemoUrl)) {
+        iframe.removeAttribute("srcdoc");
+        iframe.src = rawDemoUrl;
+        urlPill.textContent = rawDemoUrl;
+        extBtn.href = rawDemoUrl;
+        extBtn.classList.remove("hidden");
+        noticeBar.classList.remove("hidden");
+      } else {
+        iframe.removeAttribute("src");
+        iframe.srcdoc = buildInteractiveDemoSrcdoc(prod);
+        const slug = prod.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 28);
+        urlPill.textContent = `https://demo.digistore.id/${slug || "preview"}`;
+        extBtn.classList.add("hidden");
+        noticeBar.classList.add("hidden");
+      }
+
+      openModal("demoPreviewModal");
+      callApi("trackDemoView", { id: prod.id }, "POST").catch(() => {});
     }
 
-    function reloadDemoIframe() {
-      const iframe = document.getElementById("liveDemoIframe");
-      const currentSrc = iframe.src;
+    function closeDemoPreviewModal() {
+      const iframe = document.getElementById("demoPreviewIframe");
       iframe.src = "about:blank";
-      setTimeout(() => { iframe.src = currentSrc; }, 100);
+      iframe.removeAttribute("srcdoc");
+      closeModal("demoPreviewModal");
+    }
+
+    function setDemoViewport(vp) {
+      document.querySelectorAll(".demo-vp-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.vp === vp);
+      });
+      const container = document.getElementById("demoFrameContainer");
+      container.classList.remove("vp-tablet", "vp-mobile");
+      if (vp === "tablet") container.classList.add("vp-tablet");
+      if (vp === "mobile") container.classList.add("vp-mobile");
+    }
+
+    function orderFromDemoModal() {
+      closeDemoPreviewModal();
+      openCheckoutPage();
+    }
+
+    function buildInteractiveDemoSrcdoc(prod) {
+      const title = escapeHtml(prod.title);
+      const category = escapeHtml(prod.category);
+      const shortDesc = escapeHtml(prod.short_desc);
+      const fullDesc = escapeHtml(prod.full_desc);
+      const priceText = escapeHtml(formatRupiah(getEffectivePrice(prod)));
+      const thumb = escapeHtml(prod.thumbnail_url || getFallbackThumbSvg(prod.title));
+      const features = String(prod.features || "")
+        .split("\n")
+        .map(f => f.trim())
+        .filter(Boolean);
+      const featureCardsHtml = (features.length ? features : ["Desain Modern & Responsif", "Performa Cepat & Ringan", "Siap Pakai & Mudah Dikelola"])
+        .map((f, idx) => `
+          <div class="card">
+            <div class="step">0${idx + 1}</div>
+            <h4>${escapeHtml(f)}</h4>
+            <p>Komponen teruji dan siap digunakan langsung pada kebutuhan operasional Anda.</p>
+          </div>
+        `).join("");
+
+      return `<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+  body { background: #f8fafc; color: #0f172a; line-height: 1.55; }
+  header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
+  .logo { font-weight: 800; color: #4f46e5; font-size: 1rem; }
+  nav { display: flex; gap: 8px; }
+  nav button { border: none; background: #f1f5f9; color: #334155; padding: 6px 12px; border-radius: 6px; font-weight: 600; font-size: 0.82rem; cursor: pointer; }
+  nav button.active { background: #4f46e5; color: #ffffff; }
+  .hero { max-width: 980px; margin: 28px auto; padding: 0 20px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: center; }
+  .pill { display: inline-block; background: #eef2ff; color: #4f46e5; font-weight: 700; font-size: 0.75rem; padding: 4px 10px; border-radius: 999px; margin-bottom: 10px; }
+  h1 { font-size: 1.65rem; font-weight: 800; line-height: 1.25; margin-bottom: 10px; }
+  p.lead { color: #475569; font-size: 0.92rem; margin-bottom: 16px; }
+  .cta { background: #4f46e5; color: #fff; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+  .hero img { width: 100%; border-radius: 14px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px rgba(15,23,42,0.08); aspect-ratio: 16/10; object-fit: cover; }
+  .section { max-width: 980px; margin: 24px auto; padding: 0 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin-top: 14px; }
+  .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; }
+  .step { display: inline-block; background: #eef2ff; color: #4f46e5; font-weight: 800; font-size: 0.72rem; padding: 2px 8px; border-radius: 6px; margin-bottom: 8px; }
+  .card h4 { font-size: 0.92rem; margin-bottom: 4px; }
+  .card p { font-size: 0.8rem; color: #64748b; }
+  .sim-box { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; margin-top: 14px; }
+  .sim-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+  input { padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 8px; flex: 1; min-width: 180px; }
+  .toast-sim { margin-top: 10px; padding: 10px 12px; background: #ecfdf5; color: #065f46; border-radius: 8px; font-size: 0.82rem; font-weight: 600; display: none; }
+  footer { text-align: center; padding: 24px; color: #64748b; font-size: 0.8rem; border-top: 1px solid #e2e8f0; margin-top: 32px; background: #fff; }
+  @media (max-width: 720px) { .hero { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">${category}</div>
+    <nav>
+      <button class="active" onclick="showTab('home', this)">Beranda</button>
+      <button onclick="showTab('fitur', this)">Fitur Utama</button>
+      <button onclick="showTab('simulasi', this)">Uji Interaksi</button>
+    </nav>
+  </header>
+
+  <div id="tab-home">
+    <section class="hero">
+      <div>
+        <span class="pill">Pratinjau Interaktif • ${category}</span>
+        <h1>${title}</h1>
+        <p class="lead">${shortDesc}</p>
+        <button class="cta" onclick="showTab('simulasi', document.querySelectorAll('nav button')[2])">Coba Simulasi Formulir</button>
+      </div>
+      <div>
+        <img src="${thumb}" alt="${title}" />
+      </div>
+    </section>
+
+    <section class="section">
+      <h3 style="font-size: 1.05rem;">Tentang Aplikasi Ini</h3>
+      <p style="font-size: 0.88rem; color: #475569; margin-top: 6px;">${fullDesc}</p>
+      <div class="grid">${featureCardsHtml}</div>
+    </section>
+  </div>
+
+  <div id="tab-fitur" style="display:none;">
+    <section class="section">
+      <h2 style="font-size: 1.25rem; margin-bottom: 6px;">Daftar Modul & Fitur Lengkap</h2>
+      <p style="font-size: 0.86rem; color: #64748b;">Seluruh fitur di bawah ini sudah termasuk dalam paket lisensi (${priceText}).</p>
+      <div class="grid">${featureCardsHtml}</div>
+    </section>
+  </div>
+
+  <div id="tab-simulasi" style="display:none;">
+    <section class="section">
+      <h2 style="font-size: 1.25rem; margin-bottom: 6px;">Simulasi Input Pengguna pada Aplikasi</h2>
+      <p style="font-size: 0.86rem; color: #64748b;">Coba masukkan nama Anda untuk menguji respons antarmuka aplikasi secara langsung.</p>
+      <div class="sim-box">
+        <label style="font-size: 0.82rem; font-weight: 700;">Nama Penguji Demo</label>
+        <div class="sim-row">
+          <input type="text" id="demoTesterInput" placeholder="Ketik nama Anda di sini..." />
+          <button class="cta" onclick="runDemoAction()">Jalankan Simulasi</button>
+        </div>
+        <div id="demoSimResult" class="toast-sim"></div>
+      </div>
+    </section>
+  </div>
+
+  <footer>Pratinjau Demo Interaktif — ${title}</footer>
+
+  <script>
+    function showTab(name, btn) {
+      document.getElementById('tab-home').style.display = name === 'home' ? 'block' : 'none';
+      document.getElementById('tab-fitur').style.display = name === 'fitur' ? 'block' : 'none';
+      document.getElementById('tab-simulasi').style.display = name === 'simulasi' ? 'block' : 'none';
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+    function runDemoAction() {
+      var val = document.getElementById('demoTesterInput').value.trim() || 'Pengunjung';
+      var box = document.getElementById('demoSimResult');
+      box.style.display = 'block';
+      box.textContent = 'Halo ' + val + '! Respons antarmuka dan formulir pada aplikasi "${title}" berjalan normal.';
+    }
+  <\/script>
+</body>
+</html>`;
     }
 
     // ==========================================
@@ -3747,7 +3793,7 @@
       const fallback = getFallbackThumbSvg(prod.title);
 
       document.getElementById("chkSummaryThumb").src = prod.thumbnail_url || fallback;
-      document.getElementById("chkSummaryThumb").onerror = function () { this.src = fallback; };
+      document.getElementById("chkSummaryThumb").onerror = function () { this.onerror = null; this.src = fallback; };
       document.getElementById("chkSummaryCategory").textContent = prod.category;
       document.getElementById("chkSummaryTitle").textContent = prod.title;
       document.getElementById("chkSummaryNormalPrice").textContent = formatRupiah(prod.price);
@@ -4037,12 +4083,12 @@
 
       const activeCount = products.filter(p => p.status === "active").length;
       const pendingOrdersCount = orders.filter(o => o.status === "pending").length;
-      const totalDemoViews = products.reduce((sum, p) => sum + (Number(p.demo_views) || 0), 0);
+      const totalViews = products.reduce((sum, p) => sum + (Number(p.demo_views) || 0), 0);
 
       document.getElementById("kpiTotalProducts").textContent = products.length;
       document.getElementById("kpiActiveProducts").textContent = activeCount;
       document.getElementById("kpiTotalOrders").textContent = pendingOrdersCount;
-      document.getElementById("kpiTotalDemoViews").textContent = totalDemoViews;
+      document.getElementById("kpiTotalDemoViews").textContent = totalViews;
 
       const orderBadge = document.getElementById("sidebarPendingOrderBadge");
       if (pendingOrdersCount > 0) {
@@ -4052,7 +4098,7 @@
         orderBadge.classList.add("hidden");
       }
 
-      // Top Demo Table di Dashboard
+      // Top Products Table di Dashboard
       const topProducts = [...products]
         .sort((a, b) => (Number(b.demo_views) || 0) - (Number(a.demo_views) || 0))
         .slice(0, 5);
@@ -4067,7 +4113,7 @@
             <tr>
               <td>
                 <div class="tbl-product-cell">
-                  <img class="tbl-thumb" src="${escapeHtml(p.thumbnail_url || fallback)}" alt="" onerror="this.src='${fallback}'" />
+                  <img class="tbl-thumb" src="${escapeHtml(p.thumbnail_url || fallback)}" alt="" onerror="this.onerror=null;this.src='${fallback}'" />
                   <strong>${escapeHtml(p.title)}</strong>
                 </div>
               </td>
@@ -4105,7 +4151,7 @@
 
       const tbody = document.getElementById("adminProductsTableBody");
       if (filtered.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; padding: 32px; color: var(--slate-500);">Tidak ada data produk yang cocok.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 32px; color: var(--slate-500);">Tidak ada data produk yang cocok.</td></tr>`;
         return;
       }
 
@@ -4116,7 +4162,7 @@
           <tr>
             <td>
               <div class="tbl-product-cell">
-                <img class="tbl-thumb" src="${escapeHtml(p.thumbnail_url || fallback)}" alt="" onerror="this.src='${fallback}'" />
+                <img class="tbl-thumb" src="${escapeHtml(p.thumbnail_url || fallback)}" alt="" onerror="this.onerror=null;this.src='${fallback}'" />
                 <div>
                   <strong style="display: block; color: var(--slate-900);">${escapeHtml(p.title)}</strong>
                   <span style="font-size: 0.75rem; color: var(--slate-400);">${escapeHtml(p.id)}</span>
@@ -4125,11 +4171,6 @@
             </td>
             <td><span class="badge badge-primary">${escapeHtml(p.category)}</span></td>
             <td><strong>${formatRupiah(finalPrice)}</strong></td>
-            <td>
-              <a href="${escapeHtml(p.demo_url)}" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600; text-decoration: none;">
-                Buka Demo
-              </a>
-            </td>
             <td>
               <span class="badge ${p.status === "active" ? "badge-emerald" : "badge-amber"}">
                 ${p.status === "active" ? "Aktif" : "Draft"}
@@ -4278,7 +4319,7 @@
     }
 
     // ==========================================
-    // STUDIO MODAL PRODUK (CRUD + UPLOAD FOTO + LIVE PREVIEW)
+    // STUDIO MODAL PRODUK (CRUD + UPLOAD FOTO + PRATINJAU)
     // ==========================================
     function selectProductStatusRadio(status) {
       const selectEl = document.getElementById("prodStatus");
@@ -4298,11 +4339,11 @@
     function testProductDemoUrl() {
       const url = document.getElementById("prodDemoUrl").value.trim();
       if (!url) {
-        showToast("Masukkan URL Live Demo terlebih dahulu untuk diuji.", "info");
+        showToast("Masukkan URL terlebih dahulu untuk diuji.", "info");
         return;
       }
       if (!/^https?:\/\//i.test(url)) {
-        showToast("URL Live Demo harus diawali http:// atau https://", "error");
+        showToast("URL harus diawali http:// atau https://", "error");
         return;
       }
       window.open(url, "_blank", "noopener,noreferrer");
@@ -4424,6 +4465,7 @@
       const previewImg = document.getElementById("modalPreviewThumb");
       const fallbackImg = getFallbackThumbSvg(title);
       previewImg.onerror = function () {
+        this.onerror = null;
         this.src = fallbackImg;
       };
       const activeThumbSrc = (appState.productThumbPayload && appState.productThumbPayload.dataUrl)
@@ -4474,7 +4516,7 @@
         document.getElementById("prodStatus").value = prod.status;
         document.getElementById("prodPrice").value = prod.price;
         document.getElementById("prodDiscountPrice").value = prod.discount_price || "";
-        document.getElementById("prodDemoUrl").value = prod.demo_url;
+        document.getElementById("prodDemoUrl").value = (prod.demo_url && !prod.demo_url.startsWith("demo://")) ? prod.demo_url : "";
         document.getElementById("prodThumbUrl").value = prod.thumbnail_url;
         document.getElementById("prodOrderUrl").value = prod.order_url || "";
         document.getElementById("prodShortDesc").value = prod.short_desc;
@@ -4498,9 +4540,15 @@
       const price = Number(document.getElementById("prodPrice").value) || 0;
       const discountPrice = Number(document.getElementById("prodDiscountPrice").value) || 0;
       const manualThumbUrl = document.getElementById("prodThumbUrl").value.trim();
+      const demoUrl = document.getElementById("prodDemoUrl").value.trim();
 
       if (discountPrice > 0 && discountPrice >= price) {
         showToast("Harga promo harus lebih kecil daripada harga normal.", "error");
+        return;
+      }
+
+      if (demoUrl && !/^https?:\/\//i.test(demoUrl)) {
+        showToast("Tautan pratinjau eksternal harus diawali http:// atau https://", "error");
         return;
       }
 
@@ -4521,7 +4569,7 @@
         status: document.getElementById("prodStatus").value,
         price,
         discount_price: discountPrice,
-        demo_url: document.getElementById("prodDemoUrl").value.trim(),
+        demo_url: demoUrl,
         thumbnail_url: manualThumbUrl,
         thumb_file: appState.productThumbPayload ? {
           fileName: appState.productThumbPayload.fileName,
